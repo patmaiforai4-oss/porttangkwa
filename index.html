@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Patcharamai Khamka — Architecture Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Sarabun:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
@@ -39,11 +39,6 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 400;
     letter-spacing: 0.02em;
-  }
-
-  .thai-font {
-    font-family: 'Sarabun', sans-serif;
-    font-weight: 300;
   }
 
   /* ─── NAV ─── */
@@ -127,24 +122,6 @@
 
   .dropdown-menu a:last-child { border-bottom: none; }
   .dropdown-menu a:hover { background: var(--bg-secondary); color: var(--accent); }
-
-  .lang-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    background: transparent;
-    padding: 0.35rem 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .lang-btn:hover, .lang-btn.active {
-    background: var(--accent);
-    color: var(--white);
-  }
 
   .hamburger {
     display: none;
@@ -861,36 +838,34 @@
 </head>
 <body>
 
-<!-- ─── NAVIGATION ─── -->
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Tangkwa</a>
 
     <ul class="nav-links">
-      <li><a href="#about" data-en="About" data-th="เกี่ยวกับฉัน">About</a></li>
-      <li><a href="#experience" data-en="Experience" data-th="ประสบการณ์วิชาชีพ">Experience</a></li>
-      <li><a href="#skills" data-en="Skills" data-th="ทักษะและความเชี่ยวชาญ">Skills</a></li>
-      <li><a href="#education" data-en="Education" data-th="การศึกษา">Education</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
       <li class="dropdown">
         <span class="dropdown-trigger nav-links" style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-secondary);cursor:pointer;">
-          <a data-en="Projects" data-th="โครงการ" style="color:inherit">Projects</a>
+          <a style="color:inherit">Projects</a>
         </span>
         <div class="dropdown-menu">
-          <a href="#proj-hsl" data-en="01 — Home Spa Ladkrabang" data-th="01 — โฮมสปาลาดกระบัง">01 — Home Spa Ladkrabang</a>
-          <a href="#proj-pcc" data-en="02 — Prachoom Chang" data-th="02 — ประชุมช่าง">02 — Prachoom Chang</a>
-          <a href="#proj-thesis" data-en="03 — Suphan Buri Folk Music Center" data-th="03 — ศูนย์ดนตรีพื้นบ้านสุพรรณบุรี">03 — Suphan Buri Folk Music Center</a>
-          <a href="#proj-hotel" data-en="04 — Yodpiman Hotel" data-th="04 — โรงแรมยอดพิมาน">04 — Yodpiman Hotel</a>
-          <a href="#proj-skytrain" data-en="05 — Bali Hai Terminal Station" data-th="05 — สถานีปลายทางบาลีไฮ">05 — Bali Hai Terminal Station</a>
-          <a href="#proj-bdw" data-en="06 — Bangkok Design Week 2024" data-th="06 — กรุงเทพดีไซน์วีค 2024">06 — Bangkok Design Week 2024</a>
-          <a href="#proj-struct" data-en="07 — Structural Journey 2023" data-th="07 — Structural Journey 2023">07 — Structural Journey 2023</a>
-          <a href="#proj-intl" data-en="08 — International Workshop 2023" data-th="08 — เวิร์กช็อปนานาชาติ 2023">08 — International Workshop 2023</a>
+          <a href="#proj-hsl">01 — Home Spa Ladkrabang</a>
+          <a href="#proj-pcc">02 — Prachoom Chang</a>
+          <a href="#proj-thesis">03 — Suphan Buri Folk Music Center</a>
+          <a href="#proj-hotel">04 — Yodpiman Hotel</a>
+          <a href="#proj-skytrain">05 — Bali Hai Terminal Station</a>
+          <a href="#proj-bdw">06 — Bangkok Design Week 2024</a>
+          <a href="#proj-struct">07 — Structural Journey 2023</a>
+          <a href="#proj-intl">08 — International Workshop 2023</a>
         </div>
       </li>
-      <li><a href="#contact" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
     <div style="display:flex;align-items:center;gap:0.8rem;">
-      <button class="lang-btn" id="langToggle" onclick="toggleLang()">TH</button>
       <div class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
       </div>
@@ -898,153 +873,148 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMobile()" data-en="About" data-th="เกี่ยวกับฉัน">About</a>
-  <a href="#experience" onclick="closeMobile()" data-en="Experience" data-th="ประสบการณ์วิชาชีพ">Experience</a>
-  <a href="#skills" onclick="closeMobile()" data-en="Skills" data-th="ทักษะและความเชี่ยวชาญ">Skills</a>
-  <a href="#education" onclick="closeMobile()" data-en="Education" data-th="การศึกษา">Education</a>
-  <a href="#proj-hsl" onclick="closeMobile()" data-en="Project 01 — Home Spa" data-th="โครงการ 01 — โฮมสปา">Project 01 — Home Spa</a>
-  <a href="#proj-pcc" onclick="closeMobile()" data-en="Project 02 — Prachoom Chang" data-th="โครงการ 02 — ประชุมช่าง">Project 02 — Prachoom Chang</a>
-  <a href="#proj-thesis" onclick="closeMobile()" data-en="Project 03 — Folk Music Center" data-th="โครงการ 03 — ศูนย์ดนตรีพื้นบ้าน">Project 03 — Folk Music Center</a>
-  <a href="#proj-hotel" onclick="closeMobile()" data-en="Project 04 — Yodpiman Hotel" data-th="โครงการ 04 — โรงแรมยอดพิมาน">Project 04 — Yodpiman Hotel</a>
-  <a href="#proj-skytrain" onclick="closeMobile()" data-en="Project 05 — Bali Hai Station" data-th="โครงการ 05 — สถานีบาลีไฮ">Project 05 — Bali Hai Station</a>
-  <a href="#proj-bdw" onclick="closeMobile()" data-en="Project 06 — BDW 2024" data-th="โครงการ 06 — BDW 2024">Project 06 — BDW 2024</a>
-  <a href="#proj-struct" onclick="closeMobile()" data-en="Project 07 — Structural Journey" data-th="โครงการ 07 — Structural Journey">Project 07 — Structural Journey</a>
-  <a href="#proj-intl" onclick="closeMobile()" data-en="Project 08 — International Workshop" data-th="โครงการ 08 — เวิร์กช็อปนานาชาติ">Project 08 — International Workshop</a>
-  <a href="#contact" onclick="closeMobile()" data-en="Contact" data-th="ติดต่อ">Contact</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#education" onclick="closeMobile()">Education</a>
+  <a href="#proj-hsl" onclick="closeMobile()">Project 01 — Home Spa</a>
+  <a href="#proj-pcc" onclick="closeMobile()">Project 02 — Prachoom Chang</a>
+  <a href="#proj-thesis" onclick="closeMobile()">Project 03 — Folk Music Center</a>
+  <a href="#proj-hotel" onclick="closeMobile()">Project 04 — Yodpiman Hotel</a>
+  <a href="#proj-skytrain" onclick="closeMobile()">Project 05 — Bali Hai Station</a>
+  <a href="#proj-bdw" onclick="closeMobile()">Project 06 — BDW 2024</a>
+  <a href="#proj-struct" onclick="closeMobile()">Project 07 — Structural Journey</a>
+  <a href="#proj-intl" onclick="closeMobile()">Project 08 — International Workshop</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
-<!-- ─── HERO ─── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow" data-en="Architecture Portfolio — 2025" data-th="แฟ้มสะสมผลงานสถาปัตยกรรม — 2568">Architecture Portfolio — 2025</p>
+    <p class="hero-eyebrow">Architecture Portfolio — 2025</p>
     <h1 class="hero-title">
       Patcharamai<br><em>Khamka</em>
     </h1>
-    <p class="hero-subtitle" data-en="Bachelor of Architecture · Kasetsart University · Bangkok, Thailand" data-th="สถาปัตยกรรมศาสตรบัณฑิต · มหาวิทยาลัยเกษตรศาสตร์ · กรุงเทพมหานคร">Bachelor of Architecture · Kasetsart University · Bangkok, Thailand</p>
+    <p class="hero-subtitle">Bachelor of Architecture · Kasetsart University · Bangkok, Thailand</p>
     <div class="hero-ctas">
       <a href="assets/portfolio.pdf" download class="btn-primary">
-        ↓ <span data-en="Download Portfolio (PDF)" data-th="ดาวน์โหลดแฟ้มผลงาน (PDF)">Download Portfolio (PDF)</span>
+        ↓ <span>Download Portfolio (PDF)</span>
       </a>
       <a href="assets/transcript.jpg" download class="btn-outline">
-        ↓ <span data-en="Download Transcript" data-th="ดาวน์โหลดใบแสดงผลการเรียน">Download Transcript</span>
+        ↓ <span>Download Transcript</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
 <section id="about">
   <div class="container">
     <div class="about-grid reveal">
       <div>
-        <p class="section-label" data-en="01 / About" data-th="01 / เกี่ยวกับฉัน">01 / About</p>
-        <h2 class="section-title" data-en="Architecture as a medium for connection" data-th="สถาปัตยกรรม<br>ในฐานะสื่อกลางแห่งการเชื่อมต่อ">Architecture as a medium for connection</h2>
+        <p class="section-label">01 / About</p>
+        <h2 class="section-title">Architecture as a medium for connection</h2>
         <div class="divider"></div>
         <div class="about-text">
-          <p data-en="Hello, I'm Tangkwa. A graduate of the Faculty of Architecture, Department of Architecture, Kasetsart University, with approximately one year of professional experience in architecture." data-th="สวัสดีครับ ดิฉันชื่อ ตั้งกวา สำเร็จการศึกษาจากคณะสถาปัตยกรรมศาสตร์ ภาควิชาสถาปัตยกรรม มหาวิทยาลัยเกษตรศาสตร์ พร้อมประสบการณ์ทำงานวิชาชีพสถาปัตยกรรมประมาณหนึ่งปี">Hello, I'm Tangkwa. A graduate of the Faculty of Architecture, Department of Architecture, Kasetsart University, with approximately one year of professional experience in architecture.</p>
-          <p data-en="My practice is grounded in conceptual thinking and abstract analysis as a foundation for developing architectural design into tangible outcomes. I am passionate about creating designs that transcend aesthetics and functionality, meaningfully connecting with the cultural and local context of each place." data-th="แนวทางการออกแบบของดิฉันมีรากฐานจากการคิดเชิงแนวความคิดและการวิเคราะห์เชิงนามธรรม เพื่อพัฒนาการออกแบบสถาปัตยกรรมให้เป็นผลงานที่จับต้องได้ ดิฉันมีความหลงใหลในการสร้างสรรค์ผลงานที่ก้าวข้ามความสวยงามและประโยชน์ใช้สอย โดยสร้างความเชื่อมโยงอย่างมีความหมายกับบริบทวัฒนธรรมและท้องถิ่นของแต่ละสถานที่">My practice is grounded in conceptual thinking and abstract analysis as a foundation for developing architectural design into tangible outcomes. I am passionate about creating designs that transcend aesthetics and functionality, meaningfully connecting with the cultural and local context of each place.</p>
-          <p data-en="Beyond architecture, I am deeply interested in interior design, event organisation, and the creation of spatial experiences that immerse users in environments encouraging profound engagement — delivering qualities that go beyond the external form of architecture." data-th="นอกเหนือจากงานสถาปัตยกรรม ดิฉันยังสนใจในงานออกแบบตกแต่งภายใน การจัดกิจกรรม และการสร้างประสบการณ์เชิงพื้นที่ที่ดึงดูดผู้ใช้งานให้เข้าไปมีส่วนร่วมอย่างลึกซึ้ง สร้างคุณค่าที่ก้าวข้ามรูปลักษณ์ภายนอกของสถาปัตยกรรม">Beyond architecture, I am deeply interested in interior design, event organisation, and the creation of spatial experiences that immerse users in environments encouraging profound engagement — delivering qualities that go beyond the external form of architecture.</p>
+          <p>Hello, I'm Tangkwa. A graduate of the Faculty of Architecture, Department of Architecture, Kasetsart University, with approximately one year of professional experience in architecture.</p>
+          <p>My practice is grounded in conceptual thinking and abstract analysis as a foundation for developing architectural design into tangible outcomes. I am passionate about creating designs that transcend aesthetics and functionality, meaningfully connecting with the cultural and local context of each place.</p>
+          <p>Beyond architecture, I am deeply interested in interior design, event organisation, and the creation of spatial experiences that immerse users in environments encouraging profound engagement — delivering qualities that go beyond the external form of architecture.</p>
         </div>
       </div>
 
       <div class="about-meta">
         <div class="meta-row">
-          <span class="meta-label" data-en="Birthday" data-th="วันเกิด">Birthday</span>
+          <span class="meta-label">Birthday</span>
           <span class="meta-value">15 October 2001</span>
         </div>
         <div class="meta-row">
-          <span class="meta-label" data-en="Location" data-th="ที่อยู่">Location</span>
+          <span class="meta-label">Location</span>
           <span class="meta-value">Bangkok, Thailand</span>
         </div>
         <div class="meta-row">
-          <span class="meta-label" data-en="Mobile" data-th="โทรศัพท์">Mobile</span>
+          <span class="meta-label">Mobile</span>
           <span class="meta-value">(+66) 98 838 0833</span>
         </div>
         <div class="meta-row">
-          <span class="meta-label" data-en="Email" data-th="อีเมล">Email</span>
+          <span class="meta-label">Email</span>
           <span class="meta-value">Patmai1510@gmail.com</span>
         </div>
         <div class="meta-row">
-          <span class="meta-label" data-en="Line ID" data-th="ไลน์ไอดี">Line ID</span>
+          <span class="meta-label">Line ID</span>
           <span class="meta-value">Sawasder</span>
         </div>
         <div class="meta-row">
-          <span class="meta-label" data-en="Status" data-th="สถานะ">Status</span>
-          <span class="meta-value" data-en="Available for opportunities" data-th="พร้อมรับโอกาสใหม่">Available for opportunities</span>
+          <span class="meta-label">Status</span>
+          <span class="meta-value">Available for opportunities</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ─── -->
 <section id="experience">
   <div class="container">
-    <p class="section-label" data-en="02 / Experience" data-th="02 / ประสบการณ์วิชาชีพ">02 / Experience</p>
-    <h2 class="section-title" data-en="Professional Background" data-th="ประวัติการทำงานวิชาชีพ">Professional Background</h2>
+    <p class="section-label">02 / Experience</p>
+    <h2 class="section-title">Professional Background</h2>
     <div class="divider"></div>
 
     <div class="exp-item reveal">
-      <div class="exp-period" data-en="Jun 2025 — Present" data-th="มิ.ย. 2568 — ปัจจุบัน">Jun 2025 — Present</div>
+      <div class="exp-period">Jun 2025 — Present</div>
       <div>
-        <div class="exp-title" data-en="Junior Architect" data-th="สถาปนิกระดับต้น">Junior Architect</div>
+        <div class="exp-title">Junior Architect</div>
         <div class="exp-company">Creative Territories</div>
-        <p class="exp-desc" data-en="Contributing to architectural design and development of creative spatial projects, applying conceptual thinking and design skills to produce distinctive environments." data-th="มีส่วนร่วมในการออกแบบสถาปัตยกรรมและพัฒนาโครงการเชิงพื้นที่ที่สร้างสรรค์ โดยนำการคิดเชิงแนวความคิดและทักษะการออกแบบมาสร้างสรรค์สภาพแวดล้อมที่โดดเด่น">Contributing to architectural design and development of creative spatial projects, applying conceptual thinking and design skills to produce distinctive environments.</p>
+        <p class="exp-desc">Contributing to architectural design and development of creative spatial projects, applying conceptual thinking and design skills to produce distinctive environments.</p>
       </div>
     </div>
 
     <div class="exp-item reveal">
-      <div class="exp-period" data-en="Apr 2024 — Jun 2024" data-th="เม.ย. 2567 — มิ.ย. 2567">Apr 2024 — Jun 2024</div>
+      <div class="exp-period">Apr 2024 — Jun 2024</div>
       <div>
-        <div class="exp-title" data-en="Architecture Intern" data-th="นักศึกษาฝึกงานสถาปัตยกรรม">Architecture Intern</div>
+        <div class="exp-title">Architecture Intern</div>
         <div class="exp-company">V2in Architect</div>
-        <p class="exp-desc" data-en="Gained hands-on experience in architectural practice, contributing to project documentation, design development, and site coordination activities." data-th="ได้รับประสบการณ์จริงในการประกอบวิชาชีพสถาปัตยกรรม มีส่วนร่วมในการจัดทำเอกสารโครงการ การพัฒนาแบบ และกิจกรรมการประสานงานในสถานที่ก่อสร้าง">Gained hands-on experience in architectural practice, contributing to project documentation, design development, and site coordination activities.</p>
+        <p class="exp-desc">Gained hands-on experience in architectural practice, contributing to project documentation, design development, and site coordination activities.</p>
       </div>
     </div>
 
     <div class="exp-item reveal">
-      <div class="exp-period" data-en="May 2023 — Jun 2023" data-th="พ.ค. 2566 — มิ.ย. 2566">May 2023 — Jun 2023</div>
+      <div class="exp-period">May 2023 — Jun 2023</div>
       <div>
-        <div class="exp-title" data-en="Architecture Intern" data-th="นักศึกษาฝึกงานสถาปัตยกรรม">Architecture Intern</div>
+        <div class="exp-title">Architecture Intern</div>
         <div class="exp-company">StuAE, National Research Council of Thailand (NRCT)</div>
-        <p class="exp-desc" data-en="Participated in the redevelopment project of an existing building into a learning centre, developing wooden structural systems for modern architectural applications." data-th="มีส่วนร่วมในโครงการปรับปรุงอาคารเดิมเป็นศูนย์การเรียนรู้ พัฒนาระบบโครงสร้างไม้สำหรับการประยุกต์ใช้ทางสถาปัตยกรรมสมัยใหม่">Participated in the redevelopment project of an existing building into a learning centre, developing wooden structural systems for modern architectural applications.</p>
+        <p class="exp-desc">Participated in the redevelopment project of an existing building into a learning centre, developing wooden structural systems for modern architectural applications.</p>
       </div>
     </div>
 
     <div class="exp-item reveal">
-      <div class="exp-period" data-en="Mar 2024" data-th="มี.ค. 2567">Mar 2024</div>
+      <div class="exp-period">Mar 2024</div>
       <div>
-        <div class="exp-title" data-en="International Architectural Workshop" data-th="เวิร์กช็อปสถาปัตยกรรมนานาชาติ">International Architectural Workshop</div>
-        <div class="exp-company" data-en="Siem Reap, Cambodia" data-th="เสียมราฐ ราชอาณาจักรกัมพูชา">Siem Reap, Cambodia</div>
-        <p class="exp-desc" data-en="23–31 March 2024. Participated in an international design workshop exploring vernacular architecture and spatial planning within the Cambodian cultural context." data-th="23–31 มีนาคม 2567 มีส่วนร่วมในเวิร์กช็อปการออกแบบนานาชาติที่ศึกษาสถาปัตยกรรมพื้นถิ่นและการวางผังพื้นที่ในบริบทวัฒนธรรมกัมพูชา">23–31 March 2024. Participated in an international design workshop exploring vernacular architecture and spatial planning within the Cambodian cultural context.</p>
+        <div class="exp-title">International Architectural Workshop</div>
+        <div class="exp-company">Siem Reap, Cambodia</div>
+        <p class="exp-desc">23–31 March 2024. Participated in an international design workshop exploring vernacular architecture and spatial planning within the Cambodian cultural context.</p>
       </div>
     </div>
 
     <div class="exp-item reveal">
-      <div class="exp-period" data-en="Mar 2023" data-th="มี.ค. 2566">Mar 2023</div>
+      <div class="exp-period">Mar 2023</div>
       <div>
-        <div class="exp-title" data-en="International Architectural Workshop" data-th="เวิร์กช็อปสถาปัตยกรรมนานาชาติ">International Architectural Workshop</div>
-        <div class="exp-company" data-en="Kyushu University & BECAT University" data-th="มหาวิทยาลัยคิวชู & มหาวิทยาลัย BECAT">Kyushu University & BECAT University</div>
-        <p class="exp-desc" data-en="23–29 March 2023. Collaborated with international peers on structural material studies and design proposals for Wat Sai Floating Market, Bangkok." data-th="23–29 มีนาคม 2566 ร่วมงานกับผู้เข้าร่วมนานาชาติในการศึกษาวัสดุโครงสร้างและข้อเสนอการออกแบบสำหรับตลาดน้ำวัดไทย กรุงเทพมหานคร">23–29 March 2023. Collaborated with international peers on structural material studies and design proposals for Wat Sai Floating Market, Bangkok.</p>
+        <div class="exp-title">International Architectural Workshop</div>
+        <div class="exp-company">Kyushu University & BECAT University</div>
+        <p class="exp-desc">23–29 March 2023. Collaborated with international peers on structural material studies and design proposals for Wat Sai Floating Market, Bangkok.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SKILLS ─── -->
 <section id="skills">
   <div class="container">
-    <p class="section-label" data-en="03 / Skills" data-th="03 / ทักษะและความเชี่ยวชาญ">03 / Skills</p>
-    <h2 class="section-title" data-en="Technical Proficiency" data-th="ความสามารถด้านเทคนิค">Technical Proficiency</h2>
+    <p class="section-label">03 / Skills</p>
+    <h2 class="section-title">Technical Proficiency</h2>
     <div class="divider"></div>
 
     <div class="skills-grid reveal">
       <div>
-        <div class="skill-group-title" data-en="Graphic Design" data-th="การออกแบบกราฟิก">Graphic Design</div>
+        <div class="skill-group-title">Graphic Design</div>
         <ul class="skill-list">
           <li>Adobe Photoshop</li>
           <li>Adobe Illustrator</li>
@@ -1052,7 +1022,7 @@
         </ul>
       </div>
       <div>
-        <div class="skill-group-title" data-en="Drafting & Modelling" data-th="การเขียนแบบและการสร้างแบบจำลอง">Drafting & Modelling</div>
+        <div class="skill-group-title">Drafting & Modelling</div>
         <ul class="skill-list">
           <li>Rhinoceros 3D</li>
           <li>Grasshopper</li>
@@ -1061,7 +1031,7 @@
         </ul>
       </div>
       <div>
-        <div class="skill-group-title" data-en="Rendering & Visualisation" data-th="การเรนเดอร์และการนำเสนอภาพ">Rendering & Visualisation</div>
+        <div class="skill-group-title">Rendering & Visualisation</div>
         <ul class="skill-list">
           <li>D5 Render</li>
           <li>Lumion</li>
@@ -1072,28 +1042,27 @@
   </div>
 </section>
 
-<!-- ─── EDUCATION ─── -->
 <section id="education">
   <div class="container">
-    <p class="section-label" data-en="04 / Education" data-th="04 / การศึกษา">04 / Education</p>
-    <h2 class="section-title" data-en="Academic Background" data-th="ประวัติการศึกษา">Academic Background</h2>
+    <p class="section-label">04 / Education</p>
+    <h2 class="section-title">Academic Background</h2>
     <div class="divider"></div>
 
     <div class="edu-grid reveal">
       <div>
         <div class="edu-item">
-          <div class="edu-degree" data-en="Bachelor of Architecture" data-th="สถาปัตยกรรมศาสตรบัณฑิต">Bachelor of Architecture</div>
-          <div class="edu-school" data-en="Faculty of Architecture, Kasetsart University" data-th="คณะสถาปัตยกรรมศาสตร์ มหาวิทยาลัยเกษตรศาสตร์">Faculty of Architecture, Kasetsart University</div>
+          <div class="edu-degree">Bachelor of Architecture</div>
+          <div class="edu-school">Faculty of Architecture, Kasetsart University</div>
           <div class="edu-year">2020 — 2025</div>
         </div>
       </div>
 
       <div>
-        <p class="section-label" style="margin-bottom:0.8rem;" data-en="Academic Transcript" data-th="ใบแสดงผลการเรียน">Academic Transcript</p>
+        <p class="section-label" style="margin-bottom:0.8rem;">Academic Transcript</p>
         <div class="transcript-wrapper" onclick="openModal('assets/transcript.jpg')">
           <img src="assets/transcript.jpg" alt="Academic Transcript" loading="lazy">
           <div class="transcript-overlay">
-            <span data-en="View Full Size" data-th="ดูขนาดเต็ม">View Full Size</span>
+            <span>View Full Size</span>
           </div>
         </div>
       </div>
@@ -1101,39 +1070,37 @@
   </div>
 </section>
 
-<!-- ─── PROJECTS SECTION HEADER ─── -->
 <div style="background:var(--bg-dark);padding:4rem 0 3rem;border-bottom:1px solid rgba(255,255,255,0.08);">
   <div class="container">
-    <p class="section-label" style="color:var(--accent-light);" data-en="05 / Selected Works" data-th="05 / ผลงานที่คัดสรร">05 / Selected Works</p>
-    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--white);line-height:1.05;" data-en="Architectural Projects" data-th="โครงการสถาปัตยกรรม">Architectural Projects</h2>
+    <p class="section-label" style="color:var(--accent-light);">05 / Selected Works</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--white);line-height:1.05;">Architectural Projects</h2>
   </div>
 </div>
 
-<!-- ─── PROJECT 01: HSL ─── -->
 <div class="project-section" id="proj-hsl">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">01</div>
-        <div class="project-credit" data-en="Credit: Creative Territories" data-th="เครดิต: Creative Territories">Credit: Creative Territories</div>
-        <h3 class="project-title" data-en="Home Spa Ladkrabang" data-th="โฮมสปาลาดกระบัง">Home Spa Ladkrabang</h3>
+        <div class="project-credit">Credit: Creative Territories</div>
+        <h3 class="project-title">Home Spa Ladkrabang</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Site" data-th="ที่ตั้ง">Site</strong>
+            <strong>Site</strong>
             Ladkrabang, Bangkok
           </div>
           <div class="project-meta-item">
-            <strong data-en="Area" data-th="พื้นที่ใช้สอย">Area</strong>
+            <strong>Area</strong>
             280 m²
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Residential / Spa Renovation" data-th="ที่พักอาศัย / ปรับปรุงสปา">Residential / Spa Renovation</span>
+            <strong>Type</strong>
+            <span>Residential / Spa Renovation</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="This project renovates a house into a private home spa while maintaining its residential function, creating a calm Japanese-inspired atmosphere through the reuse of timber from the original house to preserve memory and add value. The design introduces a gradual transition from exterior to interior through wooden walkways and semi-outdoor spaces connected to a central courtyard, allowing natural light and nature to enhance a sense of relaxation. Reclaimed wood is used in key elements such as roof extensions, walkways, and fences, placed where it can be seen and touched, combined with natural materials to create a simple, warm, and tranquil living environment." data-th="โครงการนี้ปรับปรุงบ้านให้เป็นสปาส่วนตัวในบ้าน โดยยังคงรักษาฟังก์ชันที่พักอาศัยไว้ สร้างบรรยากาศแบบญี่ปุ่นที่สงบผ่านการนำไม้จากบ้านเดิมกลับมาใช้ใหม่เพื่อรักษาความทรงจำและเพิ่มคุณค่า แนวความคิดในการออกแบบนำเสนอการเปลี่ยนผ่านแบบค่อยเป็นค่อยไปจากภายนอกสู่ภายในผ่านทางเดินไม้และพื้นที่กึ่งกลางแจ้งที่เชื่อมต่อกับลานกลาง ให้แสงธรรมชาติและธรรมชาติช่วยเสริมความรู้สึกผ่อนคลาย ไม้รีไซเคิลถูกนำมาใช้ในองค์ประกอบสำคัญ เช่น ส่วนขยายหลังคา ทางเดิน และรั้ว วางไว้ในจุดที่มองเห็นและสัมผัสได้ ผสมผสานกับวัสดุธรรมชาติเพื่อสร้างสภาพแวดล้อมการอยู่อาศัยที่เรียบง่าย อบอุ่น และสงบ">This project renovates a house into a private home spa while maintaining its residential function, creating a calm Japanese-inspired atmosphere through the reuse of timber from the original house to preserve memory and add value. The design introduces a gradual transition from exterior to interior through wooden walkways and semi-outdoor spaces connected to a central courtyard, allowing natural light and nature to enhance a sense of relaxation. Reclaimed wood is used in key elements such as roof extensions, walkways, and fences, placed where it can be seen and touched, combined with natural materials to create a simple, warm, and tranquil living environment.</p>
+        <p class="project-concept">This project renovates a house into a private home spa while maintaining its residential function, creating a calm Japanese-inspired atmosphere through the reuse of timber from the original house to preserve memory and add value. The design introduces a gradual transition from exterior to interior through wooden walkways and semi-outdoor spaces connected to a central courtyard, allowing natural light and nature to enhance a sense of relaxation. Reclaimed wood is used in key elements such as roof extensions, walkways, and fences, placed where it can be seen and touched, combined with natural materials to create a simple, warm, and tranquil living environment.</p>
       </div>
     </div>
 
@@ -1147,44 +1114,42 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 02: PCC ─── -->
 <div class="project-section" id="proj-pcc">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">02</div>
-        <div class="project-credit" data-en="Credit: Creative Territories" data-th="เครดิต: Creative Territories">Credit: Creative Territories</div>
-        <h3 class="project-title" data-en="Prachoom Chang" data-th="ประชุมช่าง">Prachoom Chang</h3>
+        <div class="project-credit">Credit: Creative Territories</div>
+        <h3 class="project-title">Prachoom Chang</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Site" data-th="ที่ตั้ง">Site</strong>
-            <span data-en="Si Phraya Rd, Bang Rak, Bangkok" data-th="ถ.ศรีพระยา บางรัก กรุงเทพฯ">Si Phraya Rd, Bang Rak, Bangkok</span>
+            <strong>Site</strong>
+            <span>Si Phraya Rd, Bang Rak, Bangkok</span>
           </div>
           <div class="project-meta-item">
-            <strong data-en="Area" data-th="พื้นที่ใช้สอย">Area</strong>
+            <strong>Area</strong>
             1,600 m²
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Heritage Renovation / Creative Space" data-th="การปรับปรุงมรดก / พื้นที่สร้างสรรค์">Heritage Renovation / Creative Space</span>
+            <strong>Type</strong>
+            <span>Heritage Renovation / Creative Space</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="The Prachoom Chang project is a renovation of a nearly century-old building, transforming it into a space that brings together the identities of three creative disciplines — fashion, furniture, and art. The spatial arrangement emphasises separation for expression and connection for dialogue, where each zone maintains its own identity through materials, atmosphere, and function. Architecturally, the project preserves traces of the existing building as a backdrop for storytelling, while introducing new elements in a deliberate and contrasting way — creating a dialogue between past and present." data-th="โครงการประชุมช่างเป็นการปรับปรุงอาคารที่มีอายุเกือบหนึ่งศตวรรษ แปลงโฉมให้เป็นพื้นที่ที่รวบรวมอัตลักษณ์ของสามสาขาวิชาชีพสร้างสรรค์ ได้แก่ แฟชั่น เฟอร์นิเจอร์ และศิลปะ การจัดวางพื้นที่เน้นการแยกออกจากกันเพื่อการแสดงออก และการเชื่อมต่อเพื่อการสนทนา โดยแต่ละโซนคงอัตลักษณ์ของตนเองผ่านวัสดุ บรรยากาศ และฟังก์ชัน ในแง่สถาปัตยกรรม โครงการนี้รักษาร่องรอยของอาคารเดิมไว้เป็นฉากหลังสำหรับการเล่าเรื่อง ขณะที่นำเสนอองค์ประกอบใหม่ด้วยวิธีที่ตั้งใจและขัดแย้งกัน สร้างการสนทนาระหว่างอดีตและปัจจุบัน">The Prachoom Chang project is a renovation of a nearly century-old building, transforming it into a space that brings together the identities of three creative disciplines — fashion, furniture, and art. The spatial arrangement emphasises separation for expression and connection for dialogue, where each zone maintains its own identity through materials, atmosphere, and function. Architecturally, the project preserves traces of the existing building as a backdrop for storytelling, while introducing new elements in a deliberate and contrasting way — creating a dialogue between past and present.</p>
+        <p class="project-concept">The Prachoom Chang project is a renovation of a nearly century-old building, transforming it into a space that brings together the identities of three creative disciplines — fashion, furniture, and art. The spatial arrangement emphasises separation for expression and connection for dialogue, where each zone maintains its own identity through materials, atmosphere, and function. Architecturally, the project preserves traces of the existing building as a backdrop for storytelling, while introducing new elements in a deliberate and contrasting way — creating a dialogue between past and present.</p>
       </div>
     </div>
 
-    <!-- CONCEPT 1: Philip Huang (Fashion) -->
     <div class="concept-block reveal">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
         <div class="concept-number">Ⅰ</div>
         <div>
-          <div class="concept-owner" data-en="Fashion Studio — Philip Huang" data-th="สตูดิโอแฟชั่น — Philip Huang">Fashion Studio — Philip Huang</div>
-          <div class="concept-title" data-en="Brutalism Meets Craft" data-th="บรูทาลิสม์ผสมผสานกับงานฝีมือ">Brutalism Meets Craft</div>
+          <div class="concept-owner">Fashion Studio — Philip Huang</div>
+          <div class="concept-title">Brutalism Meets Craft</div>
         </div>
       </div>
-      <p class="concept-text" data-en="A design approach that blends the raw clarity of Brutalism with the intimacy of craftsmanship. It emphasises fundamental materials — concrete, steel, and glass — revealing imperfection and the passage of time. Spaces are simple, functional, and alive, evolving through use. It prioritises structure, clarity, and material honesty over decoration, with nature introduced subtly. Light, texture, and textiles shape atmosphere and spatial experience. Overall, it is architecture that is honest, minimal, yet profound — embracing imperfection, aging, and seeing them as the true beauty of living." data-th="แนวทางการออกแบบที่ผสมผสานความชัดเจนดิบของบรูทาลิสม์เข้ากับความใกล้ชิดของงานฝีมือ เน้นวัสดุพื้นฐาน ได้แก่ คอนกรีต เหล็ก และกระจก ที่เผยให้เห็นความไม่สมบูรณ์แบบและการผ่านพ้นของกาลเวลา พื้นที่มีความเรียบง่าย ใช้งานได้จริง และมีชีวิตชีวา วิวัฒน์ไปตามการใช้งาน ให้ความสำคัญกับโครงสร้าง ความชัดเจน และความซื่อสัตย์ต่อวัสดุมากกว่าการตกแต่ง โดยนำธรรมชาติเข้ามาอย่างละเอียดอ่อน แสง พื้นผิว และสิ่งทอกำหนดบรรยากาศและประสบการณ์เชิงพื้นที่">A design approach that blends the raw clarity of Brutalism with the intimacy of craftsmanship. It emphasises fundamental materials — concrete, steel, and glass — revealing imperfection and the passage of time. Spaces are simple, functional, and alive, evolving through use. It prioritises structure, clarity, and material honesty over decoration, with nature introduced subtly. Light, texture, and textiles shape atmosphere and spatial experience. Overall, it is architecture that is honest, minimal, yet profound — embracing imperfection, aging, and seeing them as the true beauty of living.</p>
+      <p class="concept-text">A design approach that blends the raw clarity of Brutalism with the intimacy of craftsmanship. It emphasises fundamental materials — concrete, steel, and glass — revealing imperfection and the passage of time. Spaces are simple, functional, and alive, evolving through use. It prioritises structure, clarity, and material honesty over decoration, with nature introduced subtly. Light, texture, and textiles shape atmosphere and spatial experience. Overall, it is architecture that is honest, minimal, yet profound — embracing imperfection, aging, and seeing them as the true beauty of living.</p>
       <div class="gallery-masonry masonry-a">
         <div class="gallery-img"><img src="assets/prachoomchang_concept1_1.jpg" alt="PCC Concept 1 - Image 1" loading="lazy"></div>
         <div class="gallery-img"><img src="assets/prachoomchang_concept1_2.jpg" alt="PCC Concept 1 - Image 2" loading="lazy"></div>
@@ -1194,16 +1159,15 @@
       </div>
     </div>
 
-    <!-- CONCEPT 2: PARIBAWGA (Furniture) -->
     <div class="concept-block reveal">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
         <div class="concept-number">Ⅱ</div>
         <div>
-          <div class="concept-owner" data-en="Furniture Studio — PARIBAWGA" data-th="สตูดิโอเฟอร์นิเจอร์ — PARIBAWGA">Furniture Studio — PARIBAWGA</div>
-          <div class="concept-title" data-en="Preserve &amp; Reveal" data-th="รักษาและเปิดเผย">Preserve &amp; Reveal</div>
+          <div class="concept-owner">Furniture Studio — PARIBAWGA</div>
+          <div class="concept-title">Preserve &amp; Reveal</div>
         </div>
       </div>
-      <p class="concept-text" data-en="The project is grounded in the idea of 'preserve and reveal,' where the existing structure, walls, and traces of time are kept and expressed as they are. The original building becomes a living backdrop, allowing materials and craftsmanship to stand out naturally. The space is reduced to only what is essential, allowing the wooden furniture to take the main role. Showroom, private kitchen, and office are seamlessly connected, creating a fluid spatial experience that feels calm, minimal, yet rich in subtle details." data-th="โครงการมีรากฐานจากแนวคิด 'รักษาและเปิดเผย' ซึ่งโครงสร้างเดิม ผนัง และร่องรอยของกาลเวลาถูกรักษาไว้และแสดงออกตามที่เป็น อาคารเดิมกลายเป็นฉากหลังที่มีชีวิต ให้วัสดุและงานฝีมือโดดเด่นขึ้นมาเองตามธรรมชาติ พื้นที่ถูกลดให้เหลือเฉพาะสิ่งที่จำเป็น ให้เฟอร์นิเจอร์ไม้มีบทบาทหลัก ห้องแสดงสินค้า ครัวส่วนตัว และสำนักงานเชื่อมต่อกันอย่างราบรื่น สร้างประสบการณ์เชิงพื้นที่ที่ลื่นไหล รู้สึกสงบ เรียบง่าย แต่อุดมด้วยรายละเอียดที่ละเอียดอ่อน">The project is grounded in the idea of 'preserve and reveal,' where the existing structure, walls, and traces of time are kept and expressed as they are. The original building becomes a living backdrop, allowing materials and craftsmanship to stand out naturally. The space is reduced to only what is essential, allowing the wooden furniture to take the main role. Showroom, private kitchen, and office are seamlessly connected, creating a fluid spatial experience that feels calm, minimal, yet rich in subtle details.</p>
+      <p class="concept-text">The project is grounded in the idea of 'preserve and reveal,' where the existing structure, walls, and traces of time are kept and expressed as they are. The original building becomes a living backdrop, allowing materials and craftsmanship to stand out naturally. The space is reduced to only what is essential, allowing the wooden furniture to take the main role. Showroom, private kitchen, and office are seamlessly connected, creating a fluid spatial experience that feels calm, minimal, yet rich in subtle details.</p>
       <div class="gallery-masonry masonry-b">
         <div class="gallery-img"><img src="assets/prachoomchang_concept2_1.jpg" alt="PCC Concept 2 - Image 1" loading="lazy"></div>
         <div class="gallery-img"><img src="assets/prachoomchang_concept2_2.jpg" alt="PCC Concept 2 - Image 2" loading="lazy"></div>
@@ -1213,16 +1177,15 @@
       </div>
     </div>
 
-    <!-- CONCEPT 3: Channatip Studio (Art) -->
     <div class="concept-block reveal">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
         <div class="concept-number">Ⅲ</div>
         <div>
-          <div class="concept-owner" data-en="Art Studio — Channatip Studio" data-th="สตูดิโอศิลปะ — Channatip Studio">Art Studio — Channatip Studio</div>
-          <div class="concept-title" data-en="Bare but Not Empty" data-th="เปลือยเปล่าแต่ไม่ว่างเปล่า">Bare but Not Empty</div>
+          <div class="concept-owner">Art Studio — Channatip Studio</div>
+          <div class="concept-title">Bare but Not Empty</div>
         </div>
       </div>
-      <p class="concept-text" data-en="A studio defined by material honesty, exposed yet calm and composed. The programme is distilled to its essentials, allowing art to emerge freely without obstruction. Natural light and passive ventilation are embedded as architectural drivers, with light moving through the space to reveal surface, dust, pigment, and time. This is not a space designed for perfection, but one that embraces imperfection — including stains, traces, and transformation — as part of its aesthetic. It is a studio that is bare but not empty, minimal yet profound, a space where art breathes through architecture." data-th="สตูดิโอที่กำหนดโดยความซื่อสัตย์ต่อวัสดุ เปิดเผยแต่สงบและสุขุม โปรแกรมถูกกลั่นกรองจนเหลือเฉพาะสาระสำคัญ ให้ศิลปะปรากฏขึ้นอย่างเสรีโดยไม่มีอุปสรรค แสงธรรมชาติและการระบายอากาศแบบพาสซีฟถูกฝังไว้เป็นตัวขับเคลื่อนทางสถาปัตยกรรม โดยแสงเคลื่อนผ่านพื้นที่เพื่อเผยให้เห็นพื้นผิว ฝุ่น เม็ดสี และกาลเวลา นี่ไม่ใช่พื้นที่ที่ออกแบบเพื่อความสมบูรณ์แบบ แต่เป็นพื้นที่ที่โอบรับความไม่สมบูรณ์แบบ รวมถึงคราบ ร่องรอย และการเปลี่ยนแปลง เป็นส่วนหนึ่งของสุนทรียภาพ">A studio defined by material honesty, exposed yet calm and composed. The programme is distilled to its essentials, allowing art to emerge freely without obstruction. Natural light and passive ventilation are embedded as architectural drivers, with light moving through the space to reveal surface, dust, pigment, and time. This is not a space designed for perfection, but one that embraces imperfection — including stains, traces, and transformation — as part of its aesthetic. It is a studio that is bare but not empty, minimal yet profound, a space where art breathes through architecture.</p>
+      <p class="concept-text">A studio defined by material honesty, exposed yet calm and composed. The programme is distilled to its essentials, allowing art to emerge freely without obstruction. Natural light and passive ventilation are embedded as architectural drivers, with light moving through the space to reveal surface, dust, pigment, and time. This is not a space designed for perfection, but one that embraces imperfection — including stains, traces, and transformation — as part of its aesthetic. It is a studio that is bare but not empty, minimal yet profound, a space where art breathes through architecture.</p>
       <div class="gallery-masonry masonry-a">
         <div class="gallery-img"><img src="assets/prachoomchang_concept3_1.jpg" alt="PCC Concept 3 - Image 1" loading="lazy"></div>
         <div class="gallery-img"><img src="assets/prachoomchang_concept3_2.jpg" alt="PCC Concept 3 - Image 2" loading="lazy"></div>
@@ -1234,31 +1197,30 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 03: THESIS ─── -->
 <div class="project-section" id="proj-thesis">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">03</div>
-        <div class="project-credit" style="color:var(--text-muted);" data-en="Thesis Project" data-th="โครงการวิทยานิพนธ์">Thesis Project</div>
-        <h3 class="project-title" data-en="Suphan Buri Folk Music Center" data-th="ศูนย์ดนตรีพื้นบ้านสุพรรณบุรี">Suphan Buri Folk Music Center</h3>
+        <div class="project-credit" style="color:var(--text-muted);">Thesis Project</div>
+        <h3 class="project-title">Suphan Buri Folk Music Center</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Site" data-th="ที่ตั้ง">Site</strong>
-            <span data-en="Banharn-Jamsai Tower, Chalerm Phatthara Ratchini Park, Suphanburi" data-th="หอบรรหาร-แจ่มใส อุทยานเฉลิมพระเกียรติ สุพรรณบุรี">Banharn-Jamsai Tower, Chalerm Phatthara Ratchini Park</span>
+            <strong>Site</strong>
+            <span>Banharn-Jamsai Tower, Chalerm Phatthara Ratchini Park</span>
           </div>
           <div class="project-meta-item">
-            <strong data-en="Area" data-th="พื้นที่ใช้สอย">Area</strong>
+            <strong>Area</strong>
             3,458 m²
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Cultural / Performance Facility" data-th="สิ่งอำนวยความสะดวกทางวัฒนธรรมและการแสดง">Cultural / Performance Facility</span>
+            <strong>Type</strong>
+            <span>Cultural / Performance Facility</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="This thesis project aims to promote, preserve, and innovate Suphan Buri's folk music, which has been recognised by UNESCO as a Creative City of Music. The design envisions a cultural space that fosters interaction between people and music, using architecture as a medium to connect the past with the present through areas for learning, performance, and musical creation. Curved lines are used to create a continuous rhythmic flow, while local materials — including bamboo and terracotta — are employed to reflect the regional identity and cultural heritage of Suphanburi." data-th="โครงการวิทยานิพนธ์นี้มุ่งส่งเสริม อนุรักษ์ และสร้างนวัตกรรมดนตรีพื้นบ้านของสุพรรณบุรี ซึ่งได้รับการยอมรับจากยูเนสโกให้เป็นเมืองสร้างสรรค์ด้านดนตรี แนวความคิดในการออกแบบจินตนาการพื้นที่ทางวัฒนธรรมที่ส่งเสริมปฏิสัมพันธ์ระหว่างผู้คนและดนตรี โดยใช้สถาปัตยกรรมเป็นสื่อกลางในการเชื่อมโยงอดีตกับปัจจุบันผ่านพื้นที่สำหรับการเรียนรู้ การแสดง และการสร้างสรรค์ดนตรี เส้นโค้งถูกนำมาใช้เพื่อสร้างจังหวะการไหลที่ต่อเนื่อง ขณะที่วัสดุท้องถิ่น ได้แก่ ไม้ไผ่และดินเผา ถูกนำมาใช้เพื่อสะท้อนอัตลักษณ์ท้องถิ่นและมรดกทางวัฒนธรรมของสุพรรณบุรี">This thesis project aims to promote, preserve, and innovate Suphan Buri's folk music, which has been recognised by UNESCO as a Creative City of Music. The design envisions a cultural space that fosters interaction between people and music, using architecture as a medium to connect the past with the present through areas for learning, performance, and musical creation. Curved lines are used to create a continuous rhythmic flow, while local materials — including bamboo and terracotta — are employed to reflect the regional identity and cultural heritage of Suphanburi.</p>
+        <p class="project-concept">This thesis project aims to promote, preserve, and innovate Suphan Buri's folk music, which has been recognised by UNESCO as a Creative City of Music. The design envisions a cultural space that fosters interaction between people and music, using architecture as a medium to connect the past with the present through areas for learning, performance, and musical creation. Curved lines are used to create a continuous rhythmic flow, while local materials — including bamboo and terracotta — are employed to reflect the regional identity and cultural heritage of Suphanburi.</p>
       </div>
     </div>
     <div class="gallery-masonry masonry-b reveal">
@@ -1271,31 +1233,30 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 04: HOTEL ─── -->
 <div class="project-section" id="proj-hotel">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">04</div>
-        <div class="project-credit" style="color:var(--text-muted);" data-en="Academic Project" data-th="โครงการการศึกษา">Academic Project</div>
-        <h3 class="project-title" data-en="Yodpiman's Development Project" data-th="โครงการพัฒนายอดพิมาน">Yodpiman's Development Project</h3>
+        <div class="project-credit" style="color:var(--text-muted);">Academic Project</div>
+        <h3 class="project-title">Yodpiman's Development Project</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Site" data-th="ที่ตั้ง">Site</strong>
-            <span data-en="Yodpiman Market, Bangkok" data-th="ตลาดยอดพิมาน กรุงเทพฯ">Yodpiman Market, Bangkok</span>
+            <strong>Site</strong>
+            <span>Yodpiman Market, Bangkok</span>
           </div>
           <div class="project-meta-item">
-            <strong data-en="Area" data-th="พื้นที่ใช้สอย">Area</strong>
+            <strong>Area</strong>
             4,000 m²
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Hotel / Mixed-Use Development" data-th="โรงแรม / การพัฒนาแบบผสมผสาน">Hotel / Mixed-Use Development</span>
+            <strong>Type</strong>
+            <span>Hotel / Mixed-Use Development</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="Building a hotel within a flower market poses challenges related to space and perspective, with the overarching concept focusing on creating a romantic ambiance. To achieve architectural harmony, the design incorporates wooden materials and open spaces, preserving the charm and ambiance of the Yodpiman Flower Market. The massing is divided into two zones — 'Live' and 'Learn' — where the learning space is oriented toward the market, creating an organic connection between the hotel and the existing flower market. The romantic concept emphasises privacy, with the hotel interior introducing a fresh perspective separated from the main market activity." data-th="การสร้างโรงแรมภายในตลาดดอกไม้ก่อให้เกิดความท้าทายด้านพื้นที่และมุมมอง โดยแนวความคิดหลักมุ่งสร้างบรรยากาศโรแมนติก เพื่อบรรลุความสามัคคีทางสถาปัตยกรรม การออกแบบนำวัสดุไม้และพื้นที่เปิดโล่งมาใช้ รักษาเสน่ห์และบรรยากาศของตลาดดอกไม้ยอดพิมาน มวลอาคารแบ่งออกเป็นสองโซน ได้แก่ 'อยู่อาศัย' และ 'เรียนรู้' โดยพื้นที่เรียนรู้หันหน้าสู่ตลาด สร้างการเชื่อมต่อที่เป็นธรรมชาติระหว่างโรงแรมและตลาดดอกไม้เดิม แนวความคิดโรแมนติกเน้นความเป็นส่วนตัว โดยภายในโรงแรมนำเสนอมุมมองใหม่ที่แยกออกจากกิจกรรมหลักของตลาด">Building a hotel within a flower market poses challenges related to space and perspective, with the overarching concept focusing on creating a romantic ambiance. To achieve architectural harmony, the design incorporates wooden materials and open spaces, preserving the charm and ambiance of the Yodpiman Flower Market. The massing is divided into two zones — 'Live' and 'Learn' — where the learning space is oriented toward the market, creating an organic connection between the hotel and the existing flower market. The romantic concept emphasises privacy, with the hotel interior introducing a fresh perspective separated from the main market activity.</p>
+        <p class="project-concept">Building a hotel within a flower market poses challenges related to space and perspective, with the overarching concept focusing on creating a romantic ambiance. To achieve architectural harmony, the design incorporates wooden materials and open spaces, preserving the charm and ambiance of the Yodpiman Flower Market. The massing is divided into two zones — 'Live' and 'Learn' — where the learning space is oriented toward the market, creating an organic connection between the hotel and the existing flower market. The romantic concept emphasises privacy, with the hotel interior introducing a fresh perspective separated from the main market activity.</p>
       </div>
     </div>
     <div class="gallery-masonry masonry-a reveal">
@@ -1308,31 +1269,30 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 05: SKYTRAIN ─── -->
 <div class="project-section" id="proj-skytrain">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">05</div>
-        <div class="project-credit" style="color:var(--text-muted);" data-en="Academic Project" data-th="โครงการการศึกษา">Academic Project</div>
-        <h3 class="project-title" data-en="Bali Hai Terminal Station" data-th="สถานีปลายทางบาลีไฮ">Bali Hai Terminal Station</h3>
+        <div class="project-credit" style="color:var(--text-muted);">Academic Project</div>
+        <h3 class="project-title">Bali Hai Terminal Station</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Site" data-th="ที่ตั้ง">Site</strong>
-            <span data-en="Bali Hai, Pattaya, Chonburi" data-th="บาลีไฮ พัทยา ชลบุรี">Bali Hai, Pattaya, Chonburi</span>
+            <strong>Site</strong>
+            <span>Bali Hai, Pattaya, Chonburi</span>
           </div>
           <div class="project-meta-item">
-            <strong data-en="Area" data-th="พื้นที่ใช้สอย">Area</strong>
+            <strong>Area</strong>
             7,800 m²
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Transit / Cultural Infrastructure" data-th="โครงสร้างพื้นฐานการขนส่งและวัฒนธรรม">Transit / Cultural Infrastructure</span>
+            <strong>Type</strong>
+            <span>Transit / Cultural Infrastructure</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="The Bali Hai Monorail is a newly developed project with a visionary extension to transform the station into a cinematic experience space — as Pattaya has been recognised by UNESCO as a Creative City of Film. The design takes advantage of the city's hilly terrain and scenic views to create a station façade that also serves as an open-air movie viewing area. The façade features a dynamic structural design incorporating axis twisting and distinctive visual angles to enhance the project's identity. Climate simulation across seasonal conditions informed the adaptive façade system balancing natural light, heat control, and transparency." data-th="โมโนเรลบาลีไฮเป็นโครงการที่พัฒนาขึ้นใหม่พร้อมส่วนต่อขยายที่มีวิสัยทัศน์ในการแปลงสถานีให้เป็นพื้นที่ประสบการณ์เชิงภาพยนตร์ เนื่องจากพัทยาได้รับการยอมรับจากยูเนสโกให้เป็นเมืองสร้างสรรค์ด้านภาพยนตร์ การออกแบบใช้ประโยชน์จากภูมิประเทศที่เป็นเนินเขาและทิวทัศน์อันงดงามของเมืองเพื่อสร้างผนังอาคารสถานีที่ทำหน้าที่เป็นพื้นที่ชมภาพยนตร์กลางแจ้ง ผนังอาคารมีการออกแบบโครงสร้างแบบไดนามิกที่ผสมผสานการบิดแกนและมุมมองทางสายตาที่โดดเด่นเพื่อเสริมอัตลักษณ์ของโครงการ การจำลองสภาพอากาศตามฤดูกาลเป็นข้อมูลสำคัญในการพัฒนาระบบผนังอาคารแบบปรับตัวที่สมดุลระหว่างแสงธรรมชาติ การควบคุมความร้อน และความโปร่งใส">The Bali Hai Monorail is a newly developed project with a visionary extension to transform the station into a cinematic experience space — as Pattaya has been recognised by UNESCO as a Creative City of Film. The design takes advantage of the city's hilly terrain and scenic views to create a station façade that also serves as an open-air movie viewing area. The façade features a dynamic structural design incorporating axis twisting and distinctive visual angles to enhance the project's identity. Climate simulation across seasonal conditions informed the adaptive façade system balancing natural light, heat control, and transparency.</p>
+        <p class="project-concept">The Bali Hai Monorail is a newly developed project with a visionary extension to transform the station into a cinematic experience space — as Pattaya has been recognised by UNESCO as a Creative City of Film. The design takes advantage of the city's hilly terrain and scenic views to create a station façade that also serves as an open-air movie viewing area. The façade features a dynamic structural design incorporating axis twisting and distinctive visual angles to enhance the project's identity. Climate simulation across seasonal conditions informed the adaptive façade system balancing natural light, heat control, and transparency.</p>
       </div>
     </div>
     <div class="gallery-masonry masonry-b reveal">
@@ -1345,27 +1305,26 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 06: BDW ─── -->
 <div class="project-section" id="proj-bdw">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">06</div>
-        <div class="project-credit" style="color:var(--text-muted);" data-en="Installation / NRCT" data-th="งานติดตั้ง / สวทช.">Installation / NRCT</div>
-        <h3 class="project-title" data-en="Bangkok Design Week 2024 — Rubberwood Pavilion" data-th="กรุงเทพดีไซน์วีค 2024 — ศาลาไม้ยางพารา">Bangkok Design Week 2024<br>— Rubberwood Pavilion</h3>
+        <div class="project-credit" style="color:var(--text-muted);">Installation / NRCT</div>
+        <h3 class="project-title">Bangkok Design Week 2024<br>— Rubberwood Pavilion</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Site" data-th="ที่ตั้ง">Site</strong>
+            <strong>Site</strong>
             NRCT, Bangkok
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Pavilion / Structural Installation" data-th="ศาลา / งานติดตั้งโครงสร้าง">Pavilion / Structural Installation</span>
+            <strong>Type</strong>
+            <span>Pavilion / Structural Installation</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="Developed under the redevelopment project of an old building into a learning centre at the National Research Council of Thailand (NRCT), this pavilion explores rubberwood as a modern architectural material. Rubberwood was chosen for its affordability and quality as a Thai timber. In designing the model, a repeating modular system was developed to create an industrial production methodology. The entrance arch form demonstrates the bending potential of rubberwood, while the flexible zone arrangement allows the pavilion to host workshops, events, and exhibitions within the same structure." data-th="พัฒนาขึ้นภายใต้โครงการปรับปรุงอาคารเก่าเป็นศูนย์การเรียนรู้ที่สำนักงานคณะกรรมการวิจัยแห่งชาติ (วช.) ศาลานี้สำรวจไม้ยางพาราในฐานะวัสดุสถาปัตยกรรมสมัยใหม่ ไม้ยางพาราถูกเลือกใช้เพราะความคุ้มค่าและคุณภาพในฐานะไม้ไทย ในการออกแบบแบบจำลอง ระบบโมดูลาร์แบบซ้ำๆ ถูกพัฒนาขึ้นเพื่อสร้างวิธีการผลิตแบบอุตสาหกรรม รูปทรงโค้งทางเข้าแสดงให้เห็นศักยภาพการดัดโค้งของไม้ยางพารา ขณะที่การจัดวางโซนที่ยืดหยุ่นช่วยให้ศาลาสามารถรองรับเวิร์กช็อป กิจกรรม และนิทรรศการภายในโครงสร้างเดียวกัน">Developed under the redevelopment project of an old building into a learning centre at the National Research Council of Thailand (NRCT), this pavilion explores rubberwood as a modern architectural material. Rubberwood was chosen for its affordability and quality as a Thai timber. In designing the model, a repeating modular system was developed to create an industrial production methodology. The entrance arch form demonstrates the bending potential of rubberwood, while the flexible zone arrangement allows the pavilion to host workshops, events, and exhibitions within the same structure.</p>
+        <p class="project-concept">Developed under the redevelopment project of an old building into a learning centre at the National Research Council of Thailand (NRCT), this pavilion explores rubberwood as a modern architectural material. Rubberwood was chosen for its affordability and quality as a Thai timber. In designing the model, a repeating modular system was developed to create an industrial production methodology. The entrance arch form demonstrates the bending potential of rubberwood, while the flexible zone arrangement allows the pavilion to host workshops, events, and exhibitions within the same structure.</p>
       </div>
     </div>
     <div class="gallery-masonry masonry-a reveal">
@@ -1378,31 +1337,30 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 07: STRUCTURAL JOURNEY ─── -->
 <div class="project-section" id="proj-struct">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">07</div>
-        <div class="project-credit" style="color:var(--text-muted);" data-en="Structural Research" data-th="การวิจัยโครงสร้าง">Structural Research</div>
-        <h3 class="project-title" data-en="Structural Journey 2023" data-th="Structural Journey 2023">Structural Journey 2023</h3>
+        <div class="project-credit" style="color:var(--text-muted);">Structural Research</div>
+        <h3 class="project-title">Structural Journey 2023</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Tutor" data-th="ที่ปรึกษา">Tutor</strong>
+            <strong>Tutor</strong>
             Prof. Kaoru Suehiro
           </div>
           <div class="project-meta-item">
-            <strong data-en="Institution" data-th="สถาบัน">Institution</strong>
+            <strong>Institution</strong>
             Kyushu University
           </div>
           <div class="project-meta-item">
-            <strong data-en="Type" data-th="ประเภท">Type</strong>
-            <span data-en="Material Research / Prototype" data-th="การวิจัยวัสดุ / ต้นแบบ">Material Research / Prototype</span>
+            <strong>Type</strong>
+            <span>Material Research / Prototype</span>
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="A structural material research project guided by Professor Kaoru Suehiro of Kyushu University, exploring typological interlocking material systems. The research investigated a modular approach where individual units connect without conventional joints — no glue, nuts, or nails — using folding angles designed into each unit's geometry. The interlocking connection allows each unit to be folded, broken, or bent, and when assembled, forms emerge as free-form structures. Two experimental models were developed: the first without overlapping interfaces, the second mixing two types of arrangement with nested interfaces to enable structural self-support through the merger principle." data-th="โครงการวิจัยวัสดุโครงสร้างภายใต้การแนะนำของศาสตราจารย์เคารุ ซูเอฮิโร จากมหาวิทยาลัยคิวชู สำรวจระบบวัสดุแบบอินเตอร์ล็อกเชิงประเภท การวิจัยสำรวจแนวทางแบบโมดูลาร์ซึ่งหน่วยแต่ละหน่วยเชื่อมต่อกันโดยไม่มีข้อต่อแบบเดิม ไม่ว่าจะเป็นกาว น็อต หรือตะปู โดยใช้มุมพับที่ออกแบบไว้ในรูปทรงของแต่ละหน่วย การเชื่อมต่อแบบอินเตอร์ล็อกช่วยให้แต่ละหน่วยสามารถพับ ทำลาย หรืองอได้ และเมื่อประกอบเข้าด้วยกัน รูปทรงจะปรากฏขึ้นเป็นโครงสร้างแบบฟรีฟอร์ม มีการพัฒนาแบบจำลองทดลองสองแบบ แบบแรกไม่มีอินเทอร์เฟซซ้อนทับ แบบที่สองผสมผสานการจัดเรียงสองประเภทพร้อมอินเทอร์เฟซซ้อนเหลื่อมเพื่อให้โครงสร้างรองรับตัวเองผ่านหลักการการรวม">A structural material research project guided by Professor Kaoru Suehiro of Kyushu University, exploring typological interlocking material systems. The research investigated a modular approach where individual units connect without conventional joints — no glue, nuts, or nails — using folding angles designed into each unit's geometry. The interlocking connection allows each unit to be folded, broken, or bent, and when assembled, forms emerge as free-form structures. Two experimental models were developed: the first without overlapping interfaces, the second mixing two types of arrangement with nested interfaces to enable structural self-support through the merger principle.</p>
+        <p class="project-concept">A structural material research project guided by Professor Kaoru Suehiro of Kyushu University, exploring typological interlocking material systems. The research investigated a modular approach where individual units connect without conventional joints — no glue, nuts, or nails — using folding angles designed into each unit's geometry. The interlocking connection allows each unit to be folded, broken, or bent, and when assembled, forms emerge as free-form structures. Two experimental models were developed: the first without overlapping interfaces, the second mixing two types of arrangement with nested interfaces to enable structural self-support through the merger principle.</p>
       </div>
     </div>
     <div class="gallery-masonry masonry-b reveal">
@@ -1415,31 +1373,30 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 08: INTERNATIONAL WORKSHOP ─── -->
 <div class="project-section" id="proj-intl">
   <div class="container">
     <div class="project-header reveal">
       <div>
         <div class="project-number">08</div>
-        <div class="project-credit" style="color:var(--text-muted);" data-en="International Collaboration" data-th="ความร่วมมือนานาชาติ">International Collaboration</div>
-        <h3 class="project-title" data-en="International Architectural Workshop 2023" data-th="เวิร์กช็อปสถาปัตยกรรมนานาชาติ 2023">International Architectural Workshop 2023</h3>
+        <div class="project-credit" style="color:var(--text-muted);">International Collaboration</div>
+        <h3 class="project-title">International Architectural Workshop 2023</h3>
         <div class="project-meta">
           <div class="project-meta-item">
-            <strong data-en="Location" data-th="สถานที่">Location</strong>
-            <span data-en="Wat Sai Floating Market, Bangkok" data-th="ตลาดน้ำวัดไทย กรุงเทพฯ">Wat Sai Floating Market, Bangkok</span>
+            <strong>Location</strong>
+            <span>Wat Sai Floating Market, Bangkok</span>
           </div>
           <div class="project-meta-item">
-            <strong data-en="Partners" data-th="สถาบันร่วม">Partners</strong>
-            <span data-en="Kyushu University & BECAT University" data-th="มหาวิทยาลัยคิวชู & มหาวิทยาลัย BECAT">Kyushu University & BECAT University</span>
+            <strong>Partners</strong>
+            <span>Kyushu University & BECAT University</span>
           </div>
           <div class="project-meta-item">
-            <strong data-en="Duration" data-th="ระยะเวลา">Duration</strong>
+            <strong>Duration</strong>
             23–29 Mar 2023
           </div>
         </div>
       </div>
       <div>
-        <p class="project-concept" data-en="Wat Sai Floating Market encompasses a diverse array of lifestyles — residents, merchants, and customers — interconnected by multiple travel routes both on water and land. This workshop analysed the area by re-zoning the market into four phases, examining the interplay between open and closed spaces. By linking each area and identifying all possibilities for new pathways, the team developed a proposal introducing new activities that attract visitors while reinforcing the existing community fabric. The proposal creates a new spatial layer that promotes closed spaces including new activities capable of drawing more people into the market environment." data-th="ตลาดน้ำวัดไทยรวบรวมวิถีชีวิตที่หลากหลาย ทั้งผู้อยู่อาศัย พ่อค้าแม่ค้า และลูกค้า เชื่อมโยงกันด้วยเส้นทางหลายสาย ทั้งทางน้ำและทางบก เวิร์กช็อปนี้วิเคราะห์พื้นที่โดยแบ่งตลาดใหม่เป็นสี่ระยะ ตรวจสอบปฏิสัมพันธ์ระหว่างพื้นที่เปิดและปิด ด้วยการเชื่อมโยงแต่ละพื้นที่และระบุความเป็นไปได้ทั้งหมดสำหรับเส้นทางใหม่ ทีมงานได้พัฒนาข้อเสนอที่แนะนำกิจกรรมใหม่ที่ดึงดูดผู้เยี่ยมชมในขณะที่เสริมสร้างโครงสร้างชุมชนที่มีอยู่ ข้อเสนอสร้างชั้นพื้นที่ใหม่ที่ส่งเสริมพื้นที่ปิดรวมถึงกิจกรรมใหม่ที่สามารถดึงดูดผู้คนมากขึ้นสู่สภาพแวดล้อมตลาด">Wat Sai Floating Market encompasses a diverse array of lifestyles — residents, merchants, and customers — interconnected by multiple travel routes both on water and land. This workshop analysed the area by re-zoning the market into four phases, examining the interplay between open and closed spaces. By linking each area and identifying all possibilities for new pathways, the team developed a proposal introducing new activities that attract visitors while reinforcing the existing community fabric. The proposal creates a new spatial layer that promotes closed spaces including new activities capable of drawing more people into the market environment.</p>
+        <p class="project-concept">Wat Sai Floating Market encompasses a diverse array of lifestyles — residents, merchants, and customers — interconnected by multiple travel routes both on water and land. This workshop analysed the area by re-zoning the market into four phases, examining the interplay between open and closed spaces. By linking each area and identifying all possibilities for new pathways, the team developed a proposal introducing new activities that attract visitors while reinforcing the existing community fabric. The proposal creates a new spatial layer that promotes closed spaces including new activities capable of drawing more people into the market environment.</p>
       </div>
     </div>
     <div class="gallery-masonry masonry-a reveal">
@@ -1452,17 +1409,16 @@
   </div>
 </div>
 
-<!-- ─── CONTACT / FOOTER ─── -->
 <footer id="contact">
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
         <div class="footer-name">Tangkwa</div>
-        <p class="footer-tagline" data-en="Junior Architect based in Bangkok, Thailand. Open to architectural projects, interior design commissions, and creative collaborations." data-th="สถาปนิกระดับต้นที่ตั้งอยู่ในกรุงเทพมหานคร ประเทศไทย เปิดรับโครงการสถาปัตยกรรม งานออกแบบตกแต่งภายใน และความร่วมมือเชิงสร้างสรรค์">Junior Architect based in Bangkok, Thailand. Open to architectural projects, interior design commissions, and creative collaborations.</p>
-        <a href="mailto:Patmai1510@gmail.com" class="btn-primary" style="display:inline-flex;margin-top:0.5rem;" data-en="Get in Touch" data-th="ติดต่อฉัน">Get in Touch</a>
+        <p class="footer-tagline">Junior Architect based in Bangkok, Thailand. Open to architectural projects, interior design commissions, and creative collaborations.</p>
+        <a href="mailto:Patmai1510@gmail.com" class="btn-primary" style="display:inline-flex;margin-top:0.5rem;">Get in Touch</a>
       </div>
       <div>
-        <div class="footer-col-title" data-en="Contact" data-th="ช่องทางติดต่อ">Contact</div>
+        <div class="footer-col-title">Contact</div>
         <ul class="footer-links">
           <li><a href="tel:+66988380833">(+66) 98 838 0833</a></li>
           <li><a href="mailto:Patmai1510@gmail.com">Patmai1510@gmail.com</a></li>
@@ -1471,74 +1427,33 @@
         </ul>
       </div>
       <div>
-        <div class="footer-col-title" data-en="Navigation" data-th="เมนูหลัก">Navigation</div>
+        <div class="footer-col-title">Navigation</div>
         <ul class="footer-links">
-          <li><a href="#about" data-en="About Me" data-th="เกี่ยวกับฉัน">About Me</a></li>
-          <li><a href="#experience" data-en="Experience" data-th="ประสบการณ์วิชาชีพ">Experience</a></li>
-          <li><a href="#skills" data-en="Skills" data-th="ทักษะและความเชี่ยวชาญ">Skills</a></li>
-          <li><a href="#education" data-en="Education" data-th="การศึกษา">Education</a></li>
-          <li><a href="#proj-hsl" data-en="Projects" data-th="โครงการ">Projects</a></li>
-          <li><a href="assets/portfolio.pdf" download data-en="Download Portfolio" data-th="ดาวน์โหลดแฟ้มผลงาน">Download Portfolio</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#proj-hsl">Projects</a></li>
+          <li><a href="assets/portfolio.pdf" download>Download Portfolio</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <span class="footer-copy" data-en="© 2026 Patcharamai Khamka. All rights reserved." data-th="© 2569 พัชรมาย คำกา สงวนลิขสิทธิ์ทั้งหมด">© 2026 Patcharamai Khamka. All rights reserved.</span>
-      <span class="footer-copy" data-en="Designed with intention." data-th="ออกแบบด้วยความตั้งใจ">Designed with intention.</span>
+      <span class="footer-copy">© 2026 Patcharamai Khamka. All rights reserved.</span>
+      <span class="footer-copy">Designed with intention.</span>
     </div>
   </div>
 </footer>
 
-<!-- ─── LIGHTBOX MODAL ─── -->
 <div class="modal-overlay" id="lightboxModal" onclick="closeModalOnBg(event)">
   <div class="modal-content">
-    <button class="modal-close" onclick="closeModal()" data-en="× Close" data-th="× ปิด">× Close</button>
+    <button class="modal-close" onclick="closeModal()">× Close</button>
     <img id="lightboxImg" src="" alt="Full size view">
   </div>
 </div>
 
-<!-- ─── JAVASCRIPT ─── -->
 <script>
-  // ── LANGUAGE TOGGLE ──
-  let currentLang = 'en';
-
-  function toggleLang() {
-    currentLang = currentLang === 'en' ? 'th' : 'en';
-    applyLang();
-    document.getElementById('langToggle').textContent = currentLang === 'en' ? 'TH' : 'EN';
-  }
-
-  function applyLang() {
-    const elements = document.querySelectorAll('[data-en]');
-    elements.forEach(el => {
-      const val = currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-th');
-      if (val !== null) {
-        el.innerHTML = val;
-      }
-    });
-
-    // Update html lang attribute
-    document.documentElement.lang = currentLang === 'th' ? 'th' : 'en';
-
-    // Apply Sarabun font body class for Thai
-    if (currentLang === 'th') {
-      document.body.classList.add('thai-font');
-      document.querySelectorAll('p, li, span, a').forEach(el => {
-        if (!el.closest('h1,h2,h3,h4,h5') && !el.classList.contains('section-label') &&
-            !el.classList.contains('project-credit') && !el.classList.contains('exp-company')) {
-          el.style.fontFamily = "'Sarabun', sans-serif";
-          el.style.fontWeight = "300";
-        }
-      });
-    } else {
-      document.querySelectorAll('p, li, span, a').forEach(el => {
-        el.style.fontFamily = '';
-        el.style.fontWeight = '';
-      });
-    }
-  }
-
   // ── MOBILE MENU ──
   function toggleMobile() {
     const menu = document.getElementById('mobileMenu');
