@@ -9,17 +9,18 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
-    --bg-primary: #f5f2ee;
-    --bg-secondary: #ede9e3;
-    --bg-dark: #1c1a17;
-    --text-primary: #1c1a17;
-    --text-secondary: #6b6560;
-    --text-muted: #9e9890;
-    --accent: #8b7355;
-    --accent-light: #c4a882;
-    --accent-warm: #d4b896;
-    --border: #d6d0c8;
-    --white: #faf8f5;
+    /* สกัดสีมาจากหน้าปก cover.jpg (พื้นขาว, โมเดลอะคริลิกสีม่วง/เขียวน้ำทะเล/เหลืองส้ม) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-dark: #111111;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #888888;
+    --accent: #9b59b6;       /* ม่วงอะคริลิก (Purple) */
+    --accent-light: #1abc9c; /* เขียวน้ำทะเล (Sea Green) */
+    --accent-warm: #f5b041;  /* เหลืองส้ม (Yellow/Orange) */
+    --border: #eeeeee;
+    --white: #ffffff;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,7 +45,7 @@
   /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(245, 242, 238, 0.92);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     transition: all 0.3s ease;
@@ -189,7 +190,7 @@
 
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(28,26,23,0.95) 0%, rgba(28,26,23,0.4) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.4) 60%, transparent 100%);
   }
 
   .hero-content {
@@ -232,7 +233,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 300;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     margin-bottom: 3rem;
     letter-spacing: 0.08em;
     opacity: 0;
@@ -523,7 +524,7 @@
 
   .transcript-overlay {
     position: absolute; inset: 0;
-    background: rgba(28,26,23,0.5);
+    background: rgba(17,17,17,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -615,7 +616,7 @@
     line-height: 1.9;
   }
 
-  /* Gallery */
+  /* Gallery Core */
   .gallery-masonry {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -634,11 +635,12 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
+    cursor: pointer; /* added for slider indicator */
   }
 
   .gallery-img:hover img { transform: scale(1.04); }
 
-  /* Masonry layout variants */
+  /* 5 items Masonry variants */
   .masonry-a .gallery-img:nth-child(1) { grid-column: 1/8; grid-row: 1/3; aspect-ratio: 16/10; }
   .masonry-a .gallery-img:nth-child(2) { grid-column: 8/13; grid-row: 1/2; aspect-ratio: 4/3; }
   .masonry-a .gallery-img:nth-child(3) { grid-column: 8/13; grid-row: 2/3; aspect-ratio: 4/3; }
@@ -650,6 +652,41 @@
   .masonry-b .gallery-img:nth-child(3) { grid-column: 5/9; grid-row: 2/3; aspect-ratio: 1/1; }
   .masonry-b .gallery-img:nth-child(4) { grid-column: 9/13; grid-row: 2/3; aspect-ratio: 1/1; }
   .masonry-b .gallery-img:nth-child(5) { grid-column: 1/13; grid-row: 4/5; aspect-ratio: 21/7; }
+
+  /* 10 items Masonry */
+  .masonry-10 .gallery-img:nth-child(1) { grid-column: 1/7; grid-row: 1/3; aspect-ratio: 3/4; }
+  .masonry-10 .gallery-img:nth-child(2) { grid-column: 7/13; grid-row: 1/2; aspect-ratio: 16/9; }
+  .masonry-10 .gallery-img:nth-child(3) { grid-column: 7/10; grid-row: 2/3; aspect-ratio: 1/1; }
+  .masonry-10 .gallery-img:nth-child(4) { grid-column: 10/13; grid-row: 2/3; aspect-ratio: 1/1; }
+  .masonry-10 .gallery-img:nth-child(5) { grid-column: 1/13; grid-row: 3/4; aspect-ratio: 21/7; }
+  .masonry-10 .gallery-img:nth-child(6) { grid-column: 1/7; grid-row: 4/5; aspect-ratio: 16/9; }
+  .masonry-10 .gallery-img:nth-child(7) { grid-column: 7/13; grid-row: 4/5; aspect-ratio: 16/9; }
+  .masonry-10 .gallery-img:nth-child(8) { grid-column: 1/5; grid-row: 5/6; aspect-ratio: 1/1; }
+  .masonry-10 .gallery-img:nth-child(9) { grid-column: 5/9; grid-row: 5/6; aspect-ratio: 1/1; }
+  .masonry-10 .gallery-img:nth-child(10){ grid-column: 9/13; grid-row: 5/6; aspect-ratio: 1/1; }
+
+  /* 7 items Masonry */
+  .masonry-7 .gallery-img:nth-child(1) { grid-column: 1/8; grid-row: 1/3; aspect-ratio: 16/10; }
+  .masonry-7 .gallery-img:nth-child(2) { grid-column: 8/13; grid-row: 1/2; aspect-ratio: 4/3; }
+  .masonry-7 .gallery-img:nth-child(3) { grid-column: 8/13; grid-row: 2/3; aspect-ratio: 4/3; }
+  .masonry-7 .gallery-img:nth-child(4) { grid-column: 1/7; grid-row: 3/4; aspect-ratio: 16/9; }
+  .masonry-7 .gallery-img:nth-child(5) { grid-column: 7/13; grid-row: 3/4; aspect-ratio: 16/9; }
+  .masonry-7 .gallery-img:nth-child(6) { grid-column: 1/7; grid-row: 4/5; aspect-ratio: 4/3; }
+  .masonry-7 .gallery-img:nth-child(7) { grid-column: 7/13; grid-row: 4/5; aspect-ratio: 4/3; }
+
+  /* 9 items Masonry */
+  .masonry-9 .gallery-img:nth-child(1) { grid-column: 1/5; grid-row: 1/3; aspect-ratio: 3/4; }
+  .masonry-9 .gallery-img:nth-child(2) { grid-column: 5/13; grid-row: 1/2; aspect-ratio: 16/8; }
+  .masonry-9 .gallery-img:nth-child(3) { grid-column: 5/9; grid-row: 2/3; aspect-ratio: 1/1; }
+  .masonry-9 .gallery-img:nth-child(4) { grid-column: 9/13; grid-row: 2/3; aspect-ratio: 1/1; }
+  .masonry-9 .gallery-img:nth-child(5) { grid-column: 1/13; grid-row: 3/4; aspect-ratio: 21/7; }
+  .masonry-9 .gallery-img:nth-child(6) { grid-column: 1/7; grid-row: 4/5; aspect-ratio: 16/9; }
+  .masonry-9 .gallery-img:nth-child(7) { grid-column: 7/13; grid-row: 4/5; aspect-ratio: 16/9; }
+  .masonry-9 .gallery-img:nth-child(8) { grid-column: 1/7; grid-row: 5/6; aspect-ratio: 4/3; }
+  .masonry-9 .gallery-img:nth-child(9) { grid-column: 7/13; grid-row: 5/6; aspect-ratio: 4/3; }
+
+  /* 1 item Masonry */
+  .masonry-1 .gallery-img:nth-child(1) { grid-column: 1/13; grid-row: 1/2; aspect-ratio: 16/9; }
 
   /* PrachoomChang concept sections */
   .concept-block {
@@ -695,7 +732,7 @@
   /* ─── MODAL / LIGHTBOX ─── */
   .modal-overlay {
     position: fixed; inset: 0; z-index: 999;
-    background: rgba(20,18,16,0.96);
+    background: rgba(17,17,17,0.96);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -709,6 +746,9 @@
     max-width: 90vw;
     max-height: 90vh;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .modal-content img {
@@ -731,6 +771,24 @@
   }
 
   .modal-close:hover { color: white; }
+
+  /* Modal Slider Buttons */
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    border: none;
+    font-size: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 10;
+  }
+  .modal-nav:hover { color: white; }
+  .modal-nav.prev { left: -5rem; }
+  .modal-nav.next { right: -5rem; }
 
   /* ─── FOOTER ─── */
   footer {
@@ -826,12 +884,21 @@
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .gallery-masonry { grid-template-columns: repeat(6, 1fr); }
+    
     .masonry-a .gallery-img:nth-child(1) { grid-column: 1/7; }
     .masonry-a .gallery-img:nth-child(2) { grid-column: 1/4; grid-row: auto; }
     .masonry-a .gallery-img:nth-child(3) { grid-column: 4/7; grid-row: auto; }
     .masonry-a .gallery-img:nth-child(4) { grid-column: 1/4; grid-row: auto; }
     .masonry-a .gallery-img:nth-child(5) { grid-column: 4/7; grid-row: auto; }
     .masonry-b .gallery-img:nth-child(n) { grid-column: 1/7; grid-row: auto; }
+    
+    .masonry-10 .gallery-img:nth-child(n),
+    .masonry-7 .gallery-img:nth-child(n),
+    .masonry-9 .gallery-img:nth-child(n),
+    .masonry-1 .gallery-img:nth-child(n) { grid-column: 1/7; grid-row: auto; aspect-ratio: auto; }
+
+    .modal-nav.prev { left: 0; background: rgba(0,0,0,0.5); padding: 0.5rem; }
+    .modal-nav.next { right: 0; background: rgba(0,0,0,0.5); padding: 0.5rem; }
   }
 
   @media (max-width: 600px) {
@@ -845,7 +912,6 @@
 </head>
 <body>
 
-<!-- ─── NAVIGATION ─── -->
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Tangkwa</a>
@@ -881,7 +947,6 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
@@ -898,7 +963,6 @@
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
-<!-- ─── HERO ─── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -919,7 +983,6 @@
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
 <section id="about">
   <div class="container">
     <div class="about-grid reveal">
@@ -964,7 +1027,6 @@
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ─── -->
 <section id="experience">
   <div class="container">
     <p class="section-label">02 / Professional Background</p>
@@ -1018,7 +1080,6 @@
   </div>
 </section>
 
-<!-- ─── SKILLS ─── -->
 <section id="skills">
   <div class="container">
     <p class="section-label">03 / Technical Proficiency</p>
@@ -1055,7 +1116,6 @@
   </div>
 </section>
 
-<!-- ─── EDUCATION ─── -->
 <section id="education">
   <div class="container">
     <p class="section-label">04 / Academic Background</p>
@@ -1092,7 +1152,6 @@
   </div>
 </section>
 
-<!-- ─── PROJECTS SECTION HEADER ─── -->
 <div style="background:var(--bg-dark);padding:4rem 0 3rem;border-bottom:1px solid rgba(255,255,255,0.08);">
   <div class="container">
     <p class="section-label" style="color:var(--accent-light);">05 / Selected Works</p>
@@ -1100,7 +1159,6 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 01: HSL ─── -->
 <div class="project-section" id="proj-hsl">
   <div class="container">
     <div class="project-header reveal">
@@ -1138,7 +1196,6 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 02: PCC ─── -->
 <div class="project-section" id="proj-pcc">
   <div class="container">
     <div class="project-header reveal">
@@ -1166,7 +1223,6 @@
       </div>
     </div>
 
-    <!-- CONCEPT 1: Philip Huang (Fashion) -->
     <div class="concept-block reveal">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
         <div class="concept-number">Ⅰ</div>
@@ -1185,7 +1241,6 @@
       </div>
     </div>
 
-    <!-- CONCEPT 2: PARIBAWGA (Furniture) -->
     <div class="concept-block reveal">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
         <div class="concept-number">Ⅱ</div>
@@ -1204,7 +1259,6 @@
       </div>
     </div>
 
-    <!-- CONCEPT 3: Channatip Studio (Art) -->
     <div class="concept-block reveal">
       <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
         <div class="concept-number">Ⅲ</div>
@@ -1225,7 +1279,6 @@
   </div>
 </div>
 
-<!-- ─── PROJECT 03: THESIS ─── -->
 <div class="project-section" id="proj-thesis">
   <div class="container">
     <div class="project-header reveal">
@@ -1252,17 +1305,21 @@
         <p class="project-concept">This thesis project aims to promote, preserve, and innovate Suphan Buri's folk music, which has been recognised by UNESCO as a Creative City of Music. The design envisions a cultural space that fosters interaction between people and music, using architecture as a medium to connect the past with the present through areas for learning, performance, and musical creation. Curved lines are used to create a continuous rhythmic flow, while local materials — including bamboo and terracotta — are employed to reflect the regional identity and cultural heritage of Suphanburi.</p>
       </div>
     </div>
-    <div class="gallery-masonry masonry-b reveal">
+    <div class="gallery-masonry masonry-10 reveal">
       <div class="gallery-img"><img src="thesis_1.jpg" alt="Suphan Buri Folk Music Center 1" loading="lazy"></div>
       <div class="gallery-img"><img src="thesis_2.jpg" alt="Suphan Buri Folk Music Center 2" loading="lazy"></div>
       <div class="gallery-img"><img src="thesis_3.jpg" alt="Suphan Buri Folk Music Center 3" loading="lazy"></div>
       <div class="gallery-img"><img src="thesis_4.jpg" alt="Suphan Buri Folk Music Center 4" loading="lazy"></div>
       <div class="gallery-img"><img src="thesis_5.jpg" alt="Suphan Buri Folk Music Center 5" loading="lazy"></div>
+      <div class="gallery-img"><img src="thesis_6.jpg" alt="Suphan Buri Folk Music Center 6" loading="lazy"></div>
+      <div class="gallery-img"><img src="thesis_7.jpg" alt="Suphan Buri Folk Music Center 7" loading="lazy"></div>
+      <div class="gallery-img"><img src="thesis_8.jpg" alt="Suphan Buri Folk Music Center 8" loading="lazy"></div>
+      <div class="gallery-img"><img src="thesis_9.jpg" alt="Suphan Buri Folk Music Center 9" loading="lazy"></div>
+      <div class="gallery-img"><img src="thesis_10.jpg" alt="Suphan Buri Folk Music Center 10" loading="lazy"></div>
     </div>
   </div>
 </div>
 
-<!-- ─── PROJECT 04: HOTEL ─── -->
 <div class="project-section" id="proj-hotel">
   <div class="container">
     <div class="project-header reveal">
@@ -1289,17 +1346,18 @@
         <p class="project-concept">Building a hotel within a flower market poses challenges related to space and perspective, with the overarching concept focusing on creating a romantic ambiance. To achieve architectural harmony, the design incorporates wooden materials and open spaces, preserving the charm and ambiance of the Yodpiman Flower Market. The massing is divided into two zones — 'Live' and 'Learn' — where the learning space is oriented toward the market, creating an organic connection between the hotel and the existing flower market. The romantic concept emphasises privacy, with the hotel interior introducing a fresh perspective separated from the main market activity.</p>
       </div>
     </div>
-    <div class="gallery-masonry masonry-a reveal">
+    <div class="gallery-masonry masonry-7 reveal">
       <div class="gallery-img"><img src="hotel_1.jpg" alt="Yodpiman Hotel 1" loading="lazy"></div>
       <div class="gallery-img"><img src="hotel_2.jpg" alt="Yodpiman Hotel 2" loading="lazy"></div>
       <div class="gallery-img"><img src="hotel_3.jpg" alt="Yodpiman Hotel 3" loading="lazy"></div>
       <div class="gallery-img"><img src="hotel_4.jpg" alt="Yodpiman Hotel 4" loading="lazy"></div>
       <div class="gallery-img"><img src="hotel_5.jpg" alt="Yodpiman Hotel 5" loading="lazy"></div>
+      <div class="gallery-img"><img src="hotel_6.jpg" alt="Yodpiman Hotel 6" loading="lazy"></div>
+      <div class="gallery-img"><img src="hotel_7.jpg" alt="Yodpiman Hotel 7" loading="lazy"></div>
     </div>
   </div>
 </div>
 
-<!-- ─── PROJECT 05: SKYTRAIN ─── -->
 <div class="project-section" id="proj-skytrain">
   <div class="container">
     <div class="project-header reveal">
@@ -1326,17 +1384,20 @@
         <p class="project-concept">The Bali Hai Monorail is a newly developed project with a visionary extension to transform the station into a cinematic experience space — as Pattaya has been recognised by UNESCO as a Creative City of Film. The design takes advantage of the city's hilly terrain and scenic views to create a station façade that also serves as an open-air movie viewing area. The façade features a dynamic structural design incorporating axis twisting and distinctive visual angles to enhance the project's identity. Climate simulation across seasonal conditions informed the adaptive façade system balancing natural light, heat control, and transparency.</p>
       </div>
     </div>
-    <div class="gallery-masonry masonry-b reveal">
+    <div class="gallery-masonry masonry-9 reveal">
       <div class="gallery-img"><img src="skytrain_1.jpg" alt="Bali Hai Station 1" loading="lazy"></div>
       <div class="gallery-img"><img src="skytrain_2.jpg" alt="Bali Hai Station 2" loading="lazy"></div>
       <div class="gallery-img"><img src="skytrain_3.jpg" alt="Bali Hai Station 3" loading="lazy"></div>
       <div class="gallery-img"><img src="skytrain_4.jpg" alt="Bali Hai Station 4" loading="lazy"></div>
       <div class="gallery-img"><img src="skytrain_5.jpg" alt="Bali Hai Station 5" loading="lazy"></div>
+      <div class="gallery-img"><img src="skytrain_6.jpg" alt="Bali Hai Station 6" loading="lazy"></div>
+      <div class="gallery-img"><img src="skytrain_7.jpg" alt="Bali Hai Station 7" loading="lazy"></div>
+      <div class="gallery-img"><img src="skytrain_8.jpg" alt="Bali Hai Station 8" loading="lazy"></div>
+      <div class="gallery-img"><img src="skytrain_9.jpg" alt="Bali Hai Station 9" loading="lazy"></div>
     </div>
   </div>
 </div>
 
-<!-- ─── PROJECT 06: BDW ─── -->
 <div class="project-section" id="proj-bdw">
   <div class="container">
     <div class="project-header reveal">
@@ -1359,17 +1420,12 @@
         <p class="project-concept">Developed under the redevelopment project of an old building into a learning centre at the National Research Council of Thailand (NRCT), this pavilion explores rubberwood as a modern architectural material. Rubberwood was chosen for its affordability and quality as a Thai timber. In designing the model, a repeating modular system was developed to create an industrial production methodology. The entrance arch form demonstrates the bending potential of rubberwood, while the flexible zone arrangement allows the pavilion to host workshops, events, and exhibitions within the same structure.</p>
       </div>
     </div>
-    <div class="gallery-masonry masonry-a reveal">
+    <div class="gallery-masonry masonry-1 reveal">
       <div class="gallery-img"><img src="bdw_1.jpg" alt="Bangkok Design Week 2024 - 1" loading="lazy"></div>
-      <div class="gallery-img"><img src="bdw_2.jpg" alt="Bangkok Design Week 2024 - 2" loading="lazy"></div>
-      <div class="gallery-img"><img src="bdw_3.jpg" alt="Bangkok Design Week 2024 - 3" loading="lazy"></div>
-      <div class="gallery-img"><img src="bdw_4.jpg" alt="Bangkok Design Week 2024 - 4" loading="lazy"></div>
-      <div class="gallery-img"><img src="bdw_5.jpg" alt="Bangkok Design Week 2024 - 5" loading="lazy"></div>
     </div>
   </div>
 </div>
 
-<!-- ─── PROJECT 07: STRUCTURAL JOURNEY ─── -->
 <div class="project-section" id="proj-struct">
   <div class="container">
     <div class="project-header reveal">
@@ -1396,17 +1452,12 @@
         <p class="project-concept">A structural material research project guided by Professor Kaoru Suehiro of Kyushu University, exploring typological interlocking material systems. The research investigated a modular approach where individual units connect without conventional joints — no glue, nuts, or nails — using folding angles designed into each unit's geometry. The interlocking connection allows each unit to be folded, broken, or bent, and when assembled, forms emerge as free-form structures. Two experimental models were developed: the first without overlapping interfaces, the second mixing two types of arrangement with nested interfaces to enable structural self-support through the merger principle.</p>
       </div>
     </div>
-    <div class="gallery-masonry masonry-b reveal">
+    <div class="gallery-masonry masonry-1 reveal">
       <div class="gallery-img"><img src="structural_1.jpg" alt="Structural Journey 2023 - 1" loading="lazy"></div>
-      <div class="gallery-img"><img src="structural_2.jpg" alt="Structural Journey 2023 - 2" loading="lazy"></div>
-      <div class="gallery-img"><img src="structural_3.jpg" alt="Structural Journey 2023 - 3" loading="lazy"></div>
-      <div class="gallery-img"><img src="structural_4.jpg" alt="Structural Journey 2023 - 4" loading="lazy"></div>
-      <div class="gallery-img"><img src="structural_5.jpg" alt="Structural Journey 2023 - 5" loading="lazy"></div>
     </div>
   </div>
 </div>
 
-<!-- ─── PROJECT 08: INTERNATIONAL WORKSHOP ─── -->
 <div class="project-section" id="proj-intl">
   <div class="container">
     <div class="project-header reveal">
@@ -1433,17 +1484,12 @@
         <p class="project-concept">Wat Sai Floating Market encompasses a diverse array of lifestyles — residents, merchants, and customers — interconnected by multiple travel routes both on water and land. This workshop analysed the area by re-zoning the market into four phases, examining the interplay between open and closed spaces. By linking each area and identifying all possibilities for new pathways, the team developed a proposal introducing new activities that attract visitors while reinforcing the existing community fabric. The proposal creates a new spatial layer that promotes closed spaces including new activities capable of drawing more people into the market environment.</p>
       </div>
     </div>
-    <div class="gallery-masonry masonry-a reveal">
+    <div class="gallery-masonry masonry-1 reveal">
       <div class="gallery-img"><img src="intlworkshop_1.jpg" alt="International Workshop 2023 - 1" loading="lazy"></div>
-      <div class="gallery-img"><img src="intlworkshop_2.jpg" alt="International Workshop 2023 - 2" loading="lazy"></div>
-      <div class="gallery-img"><img src="intlworkshop_3.jpg" alt="International Workshop 2023 - 3" loading="lazy"></div>
-      <div class="gallery-img"><img src="intlworkshop_4.jpg" alt="International Workshop 2023 - 4" loading="lazy"></div>
-      <div class="gallery-img"><img src="intlworkshop_5.jpg" alt="International Workshop 2023 - 5" loading="lazy"></div>
     </div>
   </div>
 </div>
 
-<!-- ─── CONTACT / FOOTER ─── -->
 <footer id="contact">
   <div class="footer-inner">
     <div class="footer-grid">
@@ -1481,15 +1527,15 @@
   </div>
 </footer>
 
-<!-- ─── LIGHTBOX MODAL ─── -->
 <div class="modal-overlay" id="lightboxModal" onclick="closeModalOnBg(event)">
   <div class="modal-content">
     <button class="modal-close" onclick="closeModal()">× Close</button>
+    <button class="modal-nav prev" id="modalPrev" onclick="prevImg(event)">&#10094;</button>
     <img id="lightboxImg" src="" alt="Full size view">
+    <button class="modal-nav next" id="modalNext" onclick="nextImg(event)">&#10095;</button>
   </div>
 </div>
 
-<!-- ─── JAVASCRIPT ─── -->
 <script>
   // ── MOBILE MENU ──
   function toggleMobile() {
@@ -1501,13 +1547,56 @@
     document.getElementById('mobileMenu').classList.remove('open');
   }
 
-  // ── LIGHTBOX MODAL ──
-  function openModal(src) {
+  // ── LIGHTBOX MODAL WITH SLIDER ──
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  // แนบ Event Listener ให้รูปภาพในโปรเจกต์ทั้งหมดเพื่อดึงมาเป็นกลุ่ม (Gallery)
+  document.querySelectorAll('.gallery-img img').forEach(img => {
+    img.addEventListener('click', function() {
+      const container = this.closest('.gallery-masonry');
+      // เก็บที่อยู่รูปทั้งหมดในโปรเจกต์นั้นๆ เพื่อใช้เลื่อนไปมา
+      currentGallery = Array.from(container.querySelectorAll('img')).map(el => el.src);
+      currentIndex = currentGallery.indexOf(this.src);
+      showLightboxImage();
+    });
+  });
+
+  // แนบ Event Listener ให้รูปในส่วนทรานสคริปต์
+  document.querySelectorAll('.transcript-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', function() {
+      const container = this.closest('.transcript-grid');
+      const img = this.querySelector('img');
+      currentGallery = Array.from(container.querySelectorAll('img')).map(el => el.src);
+      currentIndex = currentGallery.indexOf(img.src);
+      showLightboxImage();
+    });
+  });
+
+  function showLightboxImage() {
     const modal = document.getElementById('lightboxModal');
     const img = document.getElementById('lightboxImg');
-    img.src = src;
+    img.src = currentGallery[currentIndex];
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    
+    // ซ่อนลูกศรถ้ามีรูปเดียว
+    document.getElementById('modalPrev').style.display = currentGallery.length > 1 ? 'block' : 'none';
+    document.getElementById('modalNext').style.display = currentGallery.length > 1 ? 'block' : 'none';
+  }
+
+  function prevImg(e) {
+    e.stopPropagation();
+    if(currentGallery.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    document.getElementById('lightboxImg').src = currentGallery[currentIndex];
+  }
+
+  function nextImg(e) {
+    e.stopPropagation();
+    if(currentGallery.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    document.getElementById('lightboxImg').src = currentGallery[currentIndex];
   }
 
   function closeModal() {
@@ -1516,12 +1605,17 @@
   }
 
   function closeModalOnBg(e) {
-    if (e.target === document.getElementById('lightboxModal')) closeModal();
+    if (e.target === document.getElementById('lightboxModal') || e.target.classList.contains('modal-content')) closeModal();
   }
 
-  // Escape key closes modal
+  // รองรับการกดลูกศรซ้าย-ขวาบนคีย์บอร์ดเพื่อเปลี่ยนรูป
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
+    const modal = document.getElementById('lightboxModal');
+    if (modal.classList.contains('open')) {
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') prevImg(e);
+      if (e.key === 'ArrowRight') nextImg(e);
+    }
   });
 
   // ── SCROLL REVEAL ──
@@ -1529,7 +1623,6 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Stagger children
         const children = entry.target.querySelectorAll('.exp-item, .skill-group-title, .skill-list li');
         children.forEach((child, i) => {
           child.style.transitionDelay = `${i * 0.05}s`;
