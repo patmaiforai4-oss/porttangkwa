@@ -498,6 +498,12 @@
     color: var(--text-muted);
   }
 
+  .transcript-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
   .transcript-wrapper {
     cursor: pointer;
     overflow: hidden;
@@ -833,6 +839,7 @@
     .hero-ctas { flex-direction: column; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .gallery-masonry { display: flex; flex-direction: column; }
+    .transcript-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -905,7 +912,7 @@
       <a href="portfolio.pdf" download class="btn-primary">
         ↓ <span>Download Portfolio (PDF)</span>
       </a>
-      <a href="transcript.jpg" download class="btn-outline">
+      <a href="transcript.pdf" download class="btn-outline">
         ↓ <span>Download Transcript</span>
       </a>
     </div>
@@ -1065,11 +1072,19 @@
       </div>
 
       <div>
-        <p class="section-label" style="margin-bottom:0.8rem;">Academic Transcript</p>
-        <div class="transcript-wrapper" onclick="openModal('transcript.jpg')">
-          <img src="transcript.jpg" alt="Academic Transcript" loading="lazy">
-          <div class="transcript-overlay">
-            <span>View Full Size</span>
+        <p class="section-label" style="margin-bottom:0.8rem;">Academic Transcripts</p>
+        <div class="transcript-grid">
+          <div class="transcript-wrapper" onclick="openModal('transcript_1.jpg')">
+            <img src="transcript_1.jpg" alt="Academic Transcript Page 1" loading="lazy">
+            <div class="transcript-overlay">
+              <span>View Page 1</span>
+            </div>
+          </div>
+          <div class="transcript-wrapper" onclick="openModal('transcript_2.jpg')">
+            <img src="transcript_2.jpg" alt="Academic Transcript Page 2" loading="lazy">
+            <div class="transcript-overlay">
+              <span>View Page 2</span>
+            </div>
           </div>
         </div>
       </div>
