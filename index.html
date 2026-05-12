@@ -42,10 +42,56 @@
     letter-spacing: 0.02em;
   }
 
+  /* ─── NEW GIMMICK: GRID & NOISE OVERLAY ─── */
+  .grid-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+      linear-gradient(to right, rgba(28, 26, 23, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(28, 26, 23, 0.03) 1px, transparent 1px);
+    background-size: 4vw 4vw; /* ขนาดช่องกริด */
+  }
+
+  .noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9998; /* ให้อยู่เกือบบนสุดแต่ไม่บังคลิก */
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* ─── NEW GIMMICK: CUSTOM CURSOR (Desktop Only) ─── */
+  @media (hover: hover) and (pointer: fine) {
+    body, a, button, img, .dropdown-trigger, .transcript-wrapper { cursor: none !important; }
+    
+    .custom-cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 8px; height: 8px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 10000;
+      transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                  height 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                  background-color 0.25s ease;
+    }
+    
+    .custom-cursor.hover {
+      width: 45px; height: 45px;
+      background-color: rgba(139, 115, 85, 0.15); /* สี accent แบบโปร่งใส */
+      border: 1px solid var(--accent);
+    }
+  }
+
   /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(245, 242, 238, 0.92);
+    background: rgba(245, 242, 238, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     transition: all 0.3s ease;
@@ -91,7 +137,7 @@
   .nav-links a:hover { color: var(--accent); }
 
   .dropdown { position: relative; }
-  .dropdown-trigger { cursor: pointer; display: flex; align-items: center; gap: 0.4rem; }
+  .dropdown-trigger { display: flex; align-items: center; gap: 0.4rem; }
   .dropdown-trigger::after {
     content: '▾';
     font-size: 0.6rem;
@@ -128,7 +174,6 @@
     display: none;
     flex-direction: column;
     gap: 5px;
-    cursor: pointer;
     padding: 4px;
   }
   .hamburger span {
@@ -301,12 +346,15 @@
   section {
     padding: 7rem 0;
     border-bottom: 1px solid var(--border);
+    position: relative; /* สำหรับ Grid */
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 2;
   }
 
   .section-label {
@@ -327,11 +375,16 @@
     color: var(--text-primary);
   }
 
+  /* ─── NEW GIMMICK: DIVIDER LINE ANIMATION ─── */
   .divider {
-    width: 40px;
+    width: 0px; /* เริ่มต้นที่ 0 */
     height: 1px;
     background: var(--accent);
     margin: 1.5rem 0 3rem;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .divider.visible {
+    width: 40px; /* ยืดออกเมื่อเลื่อนจอมาถึง */
   }
 
   /* ─── ABOUT ─── */
@@ -506,7 +559,6 @@
   }
 
   .transcript-wrapper {
-    cursor: pointer;
     overflow: hidden;
     position: relative;
     aspect-ratio: 3/4;
@@ -548,6 +600,7 @@
   .project-section {
     padding: 7rem 0;
     border-bottom: 1px solid var(--border);
+    position: relative;
   }
 
   .project-section:nth-child(even) {
@@ -635,7 +688,6 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
-    cursor: pointer;
   }
 
   .gallery-img:hover img { transform: scale(1.04); }
@@ -731,7 +783,7 @@
 
   /* ─── MODAL / LIGHTBOX ─── */
   .modal-overlay {
-    position: fixed; inset: 0; z-index: 999;
+    position: fixed; inset: 0; z-index: 9999;
     background: rgba(20,18,16,0.96);
     display: flex;
     align-items: center;
@@ -765,7 +817,6 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.6);
-    cursor: pointer;
     background: none; border: none;
     transition: color 0.2s;
   }
@@ -782,7 +833,6 @@
     border: none;
     font-size: 3rem;
     padding: 1rem;
-    cursor: pointer;
     transition: color 0.3s;
     z-index: 10;
   }
@@ -795,6 +845,8 @@
     background: var(--bg-dark);
     color: rgba(255,255,255,0.5);
     padding: 4rem 0 2rem;
+    position: relative;
+    z-index: 2;
   }
 
   .footer-inner {
@@ -912,6 +964,10 @@
 </head>
 <body>
 
+<div class="grid-overlay"></div>
+<div class="noise-overlay"></div>
+<div class="custom-cursor" id="customCursor"></div>
+
 <nav id="mainNav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">Tangkwa</a>
@@ -922,7 +978,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li class="dropdown">
-        <span class="dropdown-trigger nav-links" style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-secondary);cursor:pointer;">
+        <span class="dropdown-trigger nav-links" style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-secondary);">
           <a style="color:inherit">Projects</a>
         </span>
         <div class="dropdown-menu">
@@ -1537,6 +1593,21 @@
 </div>
 
 <script>
+  // ── CUSTOM CURSOR SCRIPT ──
+  const cursor = document.getElementById('customCursor');
+  if (cursor) {
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    const hoverElements = document.querySelectorAll('a, button, img, .dropdown-trigger, .transcript-wrapper');
+    hoverElements.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  }
+
   // ── MOBILE MENU ──
   function toggleMobile() {
     const menu = document.getElementById('mobileMenu');
@@ -1551,18 +1622,15 @@
   let currentGallery = [];
   let currentIndex = 0;
 
-  // แนบ Event Listener ให้รูปภาพในโปรเจกต์ทั้งหมดเพื่อดึงมาเป็นกลุ่ม (Gallery)
   document.querySelectorAll('.gallery-img img').forEach(img => {
     img.addEventListener('click', function() {
       const container = this.closest('.gallery-masonry');
-      // เก็บที่อยู่รูปทั้งหมดในโปรเจกต์นั้นๆ เพื่อใช้เลื่อนไปมา
       currentGallery = Array.from(container.querySelectorAll('img')).map(el => el.src);
       currentIndex = currentGallery.indexOf(this.src);
       showLightboxImage();
     });
   });
 
-  // แนบ Event Listener ให้รูปในส่วนทรานสคริปต์
   document.querySelectorAll('.transcript-wrapper').forEach(wrapper => {
     wrapper.addEventListener('click', function() {
       const container = this.closest('.transcript-grid');
@@ -1580,7 +1648,6 @@
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     
-    // ซ่อนลูกศรถ้ามีรูปเดียว
     document.getElementById('modalPrev').style.display = currentGallery.length > 1 ? 'block' : 'none';
     document.getElementById('modalNext').style.display = currentGallery.length > 1 ? 'block' : 'none';
   }
@@ -1608,7 +1675,6 @@
     if (e.target === document.getElementById('lightboxModal') || e.target.classList.contains('modal-content')) closeModal();
   }
 
-  // รองรับการกดลูกศรซ้าย-ขวาบนคีย์บอร์ดเพื่อเปลี่ยนรูป
   document.addEventListener('keydown', e => {
     const modal = document.getElementById('lightboxModal');
     if (modal.classList.contains('open')) {
@@ -1618,11 +1684,13 @@
     }
   });
 
-  // ── SCROLL REVEAL ──
+  // ── SCROLL REVEAL & LINE ANIMATION ──
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        
+        // Stagger animation สำหรับ list ต่างๆ
         const children = entry.target.querySelectorAll('.exp-item, .skill-group-title, .skill-list li');
         children.forEach((child, i) => {
           child.style.transitionDelay = `${i * 0.05}s`;
@@ -1631,7 +1699,8 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  // สังเกตทั้งตัว reveal เดิม และตัวเส้นคั่น divider ใหม่
+  document.querySelectorAll('.reveal, .divider').forEach(el => revealObserver.observe(el));
 
   // ── NAV SCROLL EFFECT ──
   const nav = document.getElementById('mainNav');
