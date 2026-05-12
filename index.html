@@ -9,18 +9,18 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
-    /* สกัดสีมาจากหน้าปก cover.jpg (พื้นขาว, โมเดลอะคริลิกสีม่วง/เขียวน้ำทะเล/เหลืองส้ม) */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-dark: #111111;
-    --text-primary: #1a1a1a;
-    --text-secondary: #4a4a4a;
-    --text-muted: #888888;
-    --accent: #9b59b6;       /* ม่วงอะคริลิก (Purple) */
-    --accent-light: #1abc9c; /* เขียวน้ำทะเล (Sea Green) */
-    --accent-warm: #f5b041;  /* เหลืองส้ม (Yellow/Orange) */
-    --border: #eeeeee;
-    --white: #ffffff;
+    /* โทนสีดั้งเดิม (เอิร์ธโทน / สถาปัตยกรรมคลาสสิก) */
+    --bg-primary: #f5f2ee;
+    --bg-secondary: #ede9e3;
+    --bg-dark: #1c1a17;
+    --text-primary: #1c1a17;
+    --text-secondary: #6b6560;
+    --text-muted: #9e9890;
+    --accent: #8b7355;
+    --accent-light: #c4a882;
+    --accent-warm: #d4b896;
+    --border: #d6d0c8;
+    --white: #faf8f5;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,7 +45,7 @@
   /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(245, 242, 238, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     transition: all 0.3s ease;
@@ -190,7 +190,7 @@
 
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.4) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(28,26,23,0.95) 0%, rgba(28,26,23,0.4) 60%, transparent 100%);
   }
 
   .hero-content {
@@ -233,7 +233,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 300;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.55);
     margin-bottom: 3rem;
     letter-spacing: 0.08em;
     opacity: 0;
@@ -524,7 +524,7 @@
 
   .transcript-overlay {
     position: absolute; inset: 0;
-    background: rgba(17,17,17,0.5);
+    background: rgba(28,26,23,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -635,7 +635,7 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
-    cursor: pointer; /* added for slider indicator */
+    cursor: pointer;
   }
 
   .gallery-img:hover img { transform: scale(1.04); }
@@ -732,7 +732,7 @@
   /* ─── MODAL / LIGHTBOX ─── */
   .modal-overlay {
     position: fixed; inset: 0; z-index: 999;
-    background: rgba(17,17,17,0.96);
+    background: rgba(20,18,16,0.96);
     display: flex;
     align-items: center;
     justify-content: center;
